@@ -3454,6 +3454,12 @@ footer > a {
 .page-final .section {
   padding-block: 42px;
 }
+.page-contribution {
+  background: #eeeadf;
+}
+.page-final {
+  background: #e9e6db;
+}
 .page-research .challenge {
   padding-block: 38px;
 }
@@ -3577,7 +3583,7 @@ footer > a {
   border-bottom: 1px solid #d5ccbc;
 }
 .site-footer {
-  margin-top: 56px;
+  margin-top: 0;
   background: #e8e1d4;
   border-top: 1px solid #d5ccbc;
 }
