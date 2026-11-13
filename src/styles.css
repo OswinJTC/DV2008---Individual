@@ -4090,28 +4090,6 @@ footer > a {
 .page-contribution .contribution-cover .engineering-proof p {
   color: #c9c0b3;
 }
-.assistant-section-label {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 38px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-}
-.assistant-section-label span {
-  padding: 7px 9px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-}
-.assistant-section-label p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
 @media (max-width: 760px) {
   .page-contribution .contribution-cover .contribution-intro {
     grid-template-columns: 1fr;
@@ -4126,8 +4104,5 @@ footer > a {
   }
   .page-contribution .contribution-cover .engineering-proof > div {
     min-height: 0;
-  }
-  .assistant-section-label {
-    align-items: flex-start;
   }
 }

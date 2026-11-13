@@ -390,10 +390,6 @@ export function ContributionPage() {
               </div>
             </div>
           </div>
-          <div className="assistant-section-label">
-            <span>05A</span>
-            <p>Engineering experience, translated into an interaction.</p>
-          </div>
           <div id="assistant">
             <AssistantDemo />
           </div>
