@@ -350,14 +350,12 @@ export function ContributionPage() {
                 <span>knowing what to do.</span>
               </p>
               <p>
-                A centralised pass solved part of the problem. But people could
-                still be unsure whether an issue was covered, what the terms
-                meant, or how to begin a claim.
+                A centralised pass kept the details together, but people still
+                needed help understanding coverage and the next step.
               </p>
               <p>
-                My main design focus was the AI Warranty Assistant: an optional
-                layer for finding information, explaining it in context and
-                guiding the next action.
+                I focused on the AI Warranty Assistant: a simple layer that
+                explains the warranty in context and guides action.
               </p>
               <div className="ownership">
                 <div>
@@ -406,45 +404,6 @@ export function ContributionPage() {
             </div>
           )}
         </div>
-      </section>
-      <section className="section wrap reasoning">
-        <Label>07 / THE REASONING BEHIND THE INTERFACE</Label>
-        <h2>
-          Every interaction <em>has a reason.</em>
-        </h2>
-        {[
-          {
-            n: "01",
-            p: "Terms are hard to interpret.",
-            d: "Start with a question.",
-            w: "I used conversation to connect a user’s situation to relevant warranty information. Access alone had not resolved uncertainty.",
-          },
-          {
-            n: "02",
-            p: "The next step is unclear.",
-            d: "Make the answer actionable.",
-            w: "I connected contextual explanations to the warranty and claim journey. Research described both unclear starting points and troublesome processes.",
-          },
-          {
-            n: "03",
-            p: "People rarely use warranties.",
-            d: "Keep the path easy to recognise.",
-            w: "I treated discoverability as part of the interaction. The clearer chat-bubble entry point signals what the assistant is for, without requiring a new habit.",
-          },
-        ].map((r) => (
-          <Reveal className="reason-row" key={r.n}>
-            <span>{r.n}</span>
-            <div>
-              <span className="small-label">THE PROBLEM</span>
-              <h3>{r.p}</h3>
-            </div>
-            <div>
-              <span className="small-label">MY DESIGN DECISION</span>
-              <h3>{r.d}</h3>
-              <p>{r.w}</p>
-            </div>
-          </Reveal>
-        ))}
       </section>
     </>
   );

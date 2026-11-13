@@ -3382,6 +3382,53 @@ footer > a {
 .page-final .journey-content {
   min-height: 470px;
 }
+
+/* Contribution page: keep the case study on the same light editorial canvas. */
+.page-contribution .contribution {
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+}
+.page-contribution .contribution-intro {
+  border-bottom-color: var(--line);
+}
+.page-contribution .contribution h1,
+.page-contribution .contribution h2,
+.page-contribution .contribution h3,
+.page-contribution .contribution .large-copy {
+  color: var(--ink);
+}
+.page-contribution .contribution h1 em,
+.page-contribution .contribution .large-copy > span {
+  color: var(--accent);
+}
+.page-contribution .contribution p,
+.page-contribution .contribution .ownership span,
+.page-contribution .contribution .demo-note {
+  color: var(--muted);
+}
+.page-contribution .personal-tag {
+  border-color: var(--line);
+  color: var(--accent);
+}
+.page-contribution .ownership {
+  border-top-color: var(--line);
+}
+.page-contribution .scenario-buttons button {
+  color: var(--ink-soft);
+  border-bottom-color: var(--line);
+}
+.page-contribution .scenario-buttons button.active {
+  background: var(--paper-2);
+  color: var(--ink);
+  border-color: var(--line);
+}
+.page-contribution .demo-stage {
+  background: radial-gradient(ellipse at center, #ddd5c5 0, transparent 68%);
+}
+.page-contribution .reasoning {
+  display: none;
+}
 .page-pagination {
   margin-top: 15px;
 }
