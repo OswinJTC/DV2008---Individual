@@ -3517,27 +3517,15 @@ footer > a {
   height: 118px;
   margin: -2px -2px 16px;
   overflow: hidden;
-  background: #e8e1d4;
+  background: #fff;
   border: 1px solid var(--line);
 }
 .concept-thumb img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-}
-.concept-tabs button:nth-child(1) .concept-thumb img {
-  object-position: 50% 30%;
-}
-.concept-tabs button:nth-child(2) .concept-thumb img {
-  object-position: 50% 50%;
-}
-.concept-tabs button:nth-child(3) .concept-thumb img {
-  object-position: 50% 50%;
-}
-.concept-tabs button:nth-child(4) .concept-thumb img {
-  object-position: 50% 30%;
 }
 .research-summary-card,
 .research-bars {

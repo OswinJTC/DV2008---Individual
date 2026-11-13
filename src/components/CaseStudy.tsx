@@ -74,7 +74,7 @@ const concepts = [
     trade:
       "Downloading, setting up and maintaining another app adds work to a low-frequency task.",
     num: "01",
-    image: "direction-phone.svg",
+    image: "direction-app-original.png",
   },
   {
     name: "Shopee integration",
@@ -84,7 +84,7 @@ const concepts = [
     trade:
       "Purchases from other platforms and physical stores remain outside the system.",
     num: "02",
-    image: "shopee-mark.svg",
+    image: "direction-shopee-original.png",
   },
   {
     name: "Email / Gmail",
@@ -94,7 +94,7 @@ const concepts = [
     trade:
       "Inbox access raises privacy concerns; inconsistent receipt formats complicate collection.",
     num: "03",
-    image: "gmail-mark.svg",
+    image: "direction-gmail-original.jpg",
   },
   {
     name: "Apple Wallet",
@@ -104,7 +104,7 @@ const concepts = [
     trade:
       "Depends on merchant support and excludes people who do not use Apple Wallet.",
     num: "04",
-    image: "apple-wallet-mark.svg",
+    image: "direction-wallet-original.png",
   },
 ];
 export function Concepts() {
@@ -122,10 +122,8 @@ export function Concepts() {
           >
             <span className="concept-thumb">
               <img
-                src={
-                  c.image.endsWith(".svg") ? `/images/${c.image}` : img(c.image)
-                }
-                alt=""
+                src={`/images/${c.image}`}
+                alt={`${c.name} — original presentation image`}
                 loading="lazy"
               />
             </span>
