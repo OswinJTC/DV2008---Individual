@@ -9,9 +9,6 @@ import {
   Mail,
   Layers,
   MessageCircle,
-  FileText,
-  ShieldCheck,
-  ChevronRight,
 } from "lucide-react";
 
 export const img = (name: string) => `/images/${name}.webp`;
@@ -161,163 +158,28 @@ export function Concepts() {
     </div>
   );
 }
-const scenarios = [
-  {
-    question: "Is this issue covered?",
-    short: "Understand coverage",
-    icon: ShieldCheck,
-    user: "What does my headphone warranty cover?",
-    heading: "Start with the right product.",
-    explanation:
-      "A general question can refer to more than one purchase. The assistant first helps identify the warranty, then explains the relevant coverage.",
-    reply: "I found two headphones. Which one do you mean?",
-    action: "Sony WH-1000XM5",
-    result:
-      "The prototype explains parts and labour coverage in plain language, alongside the product’s warranty details.",
-    next: "View the warranty",
-    asset: "warranty-pass",
-  },
-  {
-    question: "Where is my receipt?",
-    short: "Retrieve a receipt",
-    icon: FileText,
-    user: "Where is the receipt for my Sony headphones?",
-    heading: "Bring the evidence into reach.",
-    explanation:
-      "Retrieval is part of the conversation. Connect the question to the purchase record so the user does not need to remember where it was saved.",
-    reply: "Let’s find the purchase record attached to your warranty.",
-    action: "Find Sony purchase record",
-    result:
-      "The warranty pass keeps the product and purchase information together, with access to the original proof of purchase.",
-    next: "View purchase details",
-    asset: "warranty-pass",
-  },
-  {
-    question: "How do I make a claim?",
-    short: "Find the next step",
-    icon: MessageCircle,
-    user: "How do I make a claim for my headphones?",
-    heading: "Turn uncertainty into a next step.",
-    explanation:
-      "Guidance connects back to the claim flow. The user can describe the issue, attach evidence and follow the progress of the claim.",
-    reply:
-      "First, check the coverage for this product. Then describe what went wrong and add relevant photos or video.",
-    action: "Show the claim steps",
-    result:
-      "The team’s claim form asks for the issue and supporting evidence. A separate timeline explains the status and any action needed.",
-    next: "View the claim form",
-    asset: "claim-form",
-  },
-];
 export function AssistantDemo() {
-  const [selected, setSelected] = useState(0);
-  const [step, setStep] = useState(0);
-  const s = scenarios[selected];
   return (
     <div className="assistant-layout">
       <div className="assistant-copy">
         <Label light>06 / MY INTERACTION DESIGN</Label>
         <h2>
-          A question. A little clarity. <em>A way forward.</em>
+          A question. <em>A clear next step.</em>
         </h2>
         <p>
-          Instead of asking people to decode a warranty, I focused on helping
-          them ask the question they already have.
+          I designed the assistant to identify the right product first, then
+          explain coverage in plain language.
         </p>
-        <div className="scenario-buttons" aria-label="Assistant scenarios">
-          {scenarios.map((c, i) => (
-            <button
-              aria-pressed={selected === i}
-              onClick={() => {
-                setSelected(i);
-                setStep(0);
-              }}
-              key={c.question}
-              className={selected === i ? "active" : ""}
-            >
-              <c.icon size={19} />
-              <span>{c.question}</span>
-              <ArrowUpRight size={18} />
-            </button>
-          ))}
-        </div>
-        <div className="scenario-description" aria-live="polite">
-          <h3>{s.heading}</h3>
-          <p>{s.explanation}</p>
-        </div>
-        <p className="demo-note">
-          Interactive illustration · scripted, not live AI.
-          <br />
-          Receipt and claim dialogues illustrate capabilities described in the
-          project; they are not tested screens.
-        </p>
+        <p className="demo-note">Original prototype · Assignment 3 / p. 9</p>
       </div>
       <div className="demo-stage">
-        <div className="demo-phone">
-          <div className="device-status">
-            <span>9:41</span>
-            <span>● ▰</span>
-          </div>
-          <div className="demo-header">
-            <MessageCircle size={20} />
-            <strong>Warranty Assistant</strong>
-            <span>✳</span>
-          </div>
-          <div className="demo-messages" aria-live="polite">
-            <span className="conversation-label">{s.short}</span>
-            <div className="user-bubble">{s.user}</div>
-            <div className="assistant-bubble">
-              <span className="assistant-symbol">✳</span>
-              <p>{s.reply}</p>
-            </div>
-            {step === 0 ? (
-              <button className="product-choice" onClick={() => setStep(1)}>
-                <span>
-                  <small>CONTINUE THE SCENARIO</small>
-                  {s.action}
-                </span>
-                <ChevronRight size={18} />
-              </button>
-            ) : step === 1 ? (
-              <>
-                <div className="user-bubble">{s.action}</div>
-                <div className="assistant-bubble result">
-                  <strong>
-                    {selected === 0
-                      ? "Coverage, in plain language"
-                      : selected === 1
-                        ? "Your purchase information"
-                        : "From question to claim"}
-                  </strong>
-                  <p>{s.result}</p>
-                  <button onClick={() => setStep(2)}>
-                    {s.next}
-                    <ArrowRight size={15} />
-                  </button>
-                </div>
-              </>
-            ) : (
-              <div className="demo-source">
-                <img
-                  src={img(s.asset)}
-                  alt={
-                    selected === 2
-                      ? "Original claim form from Assignment 3"
-                      : "Original warranty pass from Assignment 3"
-                  }
-                />
-                <span>Original project screen · A3</span>
-              </div>
-            )}
-          </div>
-          <div className="demo-footer">
-            <span>{step + 1} / 3</span>
-            <button onClick={() => setStep(0)}>Restart scenario ↺</button>
-          </div>
-        </div>
-        <span className="stage-caption">
-          Try a question, then follow the next action.
-        </span>
+        <figure className="prototype-phone">
+          <img
+            src={img("assistant-original")}
+            alt="Original AI Warranty Assistant prototype showing headphone selection and plain-language warranty coverage"
+          />
+          <figcaption>Original Warranty Assistant prototype</figcaption>
+        </figure>
       </div>
     </div>
   );

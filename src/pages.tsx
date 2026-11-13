@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ArrowUpRight, ArrowDown, ArrowRight, Plus, Minus } from "lucide-react";
+import { ArrowUpRight, ArrowDown, ArrowRight, Plus } from "lucide-react";
 import {
   Label,
   Reveal,
@@ -309,7 +308,6 @@ export function DirectionsPage() {
 }
 
 export function ContributionPage() {
-  const [showOriginal, setShowOriginal] = useState(false);
   return (
     <>
       <section id="contribution" className="contribution">
@@ -399,33 +397,6 @@ export function ContributionPage() {
           <div id="assistant">
             <AssistantDemo />
           </div>
-          <button
-            className="original-toggle"
-            aria-expanded={showOriginal}
-            onClick={() => setShowOriginal(!showOriginal)}
-          >
-            {showOriginal ? <Minus size={18} /> : <Plus size={18} />} View my
-            original Assistant prototype screen <span>A3 / P. 9</span>
-          </button>
-          {showOriginal && (
-            <div className="original-panel">
-              <img
-                src={img("assistant-original")}
-                alt="Original AI Warranty Assistant screenshot, identifying headphones and explaining parts and labour coverage"
-              />
-              <div>
-                <h3>The original interaction</h3>
-                <p>
-                  The conversation resolves which headphones the user means,
-                  explains coverage, and links back to the warranty.
-                </p>
-                <p className="demo-note">
-                  This is a design prototype. Its example response is not a
-                  verified statement of a real product’s warranty policy.
-                </p>
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </>
