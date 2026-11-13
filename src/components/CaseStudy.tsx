@@ -170,6 +170,29 @@ export function AssistantDemo() {
           I designed the assistant to identify the right product first, then
           explain coverage in plain language.
         </p>
+        <div className="assistant-principles">
+          <div>
+            <span>01</span>
+            <p>
+              <strong>Ask naturally.</strong> People can start with the question
+              they already have, instead of learning a new menu.
+            </p>
+          </div>
+          <div>
+            <span>02</span>
+            <p>
+              <strong>Clarify uncertainty.</strong> When a question could mean
+              more than one warranty, the assistant asks before answering.
+            </p>
+          </div>
+          <div>
+            <span>03</span>
+            <p>
+              <strong>Return to evidence.</strong> Answers lead to the actual
+              warranty, receipt or claim action through a clear button.
+            </p>
+          </div>
+        </div>
         <p className="demo-note">Original prototype · Assignment 3 / p. 9</p>
       </div>
       <div className="demo-stage">
