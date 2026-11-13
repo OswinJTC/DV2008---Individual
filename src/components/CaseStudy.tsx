@@ -74,7 +74,7 @@ const concepts = [
     trade:
       "Downloading, setting up and maintaining another app adds work to a low-frequency task.",
     num: "01",
-    image: "assistant-original",
+    image: "wallet-overview",
   },
   {
     name: "Shopee integration",
@@ -94,7 +94,7 @@ const concepts = [
     trade:
       "Inbox access raises privacy concerns; inconsistent receipt formats complicate collection.",
     num: "03",
-    image: "receipt-button-after",
+    image: "gmail-mark.svg",
   },
   {
     name: "Apple Wallet",
@@ -104,7 +104,7 @@ const concepts = [
     trade:
       "Depends on merchant support and excludes people who do not use Apple Wallet.",
     num: "04",
-    image: "wallet-overview",
+    image: "warranty-pass",
   },
 ];
 export function Concepts() {
@@ -121,7 +121,13 @@ export function Concepts() {
             className={i === active ? "active" : ""}
           >
             <span className="concept-thumb">
-              <img src={img(c.image)} alt="" loading="lazy" />
+              <img
+                src={
+                  c.image.endsWith(".svg") ? `/images/${c.image}` : img(c.image)
+                }
+                alt=""
+                loading="lazy"
+              />
             </span>
             <span className="concept-top">
               <c.icon size={25} strokeWidth={1.4} />

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220">
+  <rect width="600" height="220" rx="8" fill="#f1f1f1"/>
+  <path fill="#4285f4" d="M92 55h62v112H92z"/>
+  <path fill="#34a853" d="M154 55h62v112h-62z"/>
+  <path fill="#fbbc04" d="M92 55l62 48 62-48v54l-62 48-62-48z"/>
+  <path fill="#ea4335" d="M92 55l62 48 62-48h-26l-36 28-36-28z"/>
+  <text x="245" y="143" font-family="Arial, sans-serif" font-size="88" fill="#646a73">Gmail</text>
+</svg>
