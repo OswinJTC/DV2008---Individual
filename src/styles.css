@@ -3183,6 +3183,121 @@ footer > a {
     letter-spacing: 0.03em;
   }
 }
+
+.about-me {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 62px;
+  align-items: start;
+  padding-block: 64px 70px;
+  border-top: 1px solid var(--line);
+}
+.about-portrait {
+  padding-top: 28px;
+  text-align: center;
+}
+.portrait-placeholder {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: 1px dashed #a99a82;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ebe4d7;
+  color: #88775e;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+.about-portrait small {
+  display: block;
+  margin-top: 14px;
+  color: #7a7062;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.about-copy h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.13;
+  margin-bottom: 24px;
+}
+.about-copy h2 em {
+  color: #786346;
+}
+.about-lead {
+  max-width: 62ch;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+  margin-top: 26px;
+  max-width: 830px;
+}
+.about-columns p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+.about-columns strong {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+.strengths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+.strengths span {
+  border: 1px solid #cfc5b5;
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 13px;
+  line-height: 1.3;
+  color: #665b4e;
+}
+@media (max-width: 650px) {
+  .about-me {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 42px 45px;
+  }
+  .about-portrait {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 0;
+    text-align: left;
+  }
+  .portrait-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .about-portrait small {
+    margin-top: 0;
+  }
+  .about-copy h2 {
+    font-size: 34px;
+  }
+  .about-lead {
+    font-size: 17px;
+  }
+  .about-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .about-columns p {
+    font-size: 16px;
+  }
+}
 @media (max-width: 370px) {
   .hero-art {
     height: 470px;
@@ -3224,28 +3339,63 @@ footer > a {
 .page-research .flow-details,
 .page-research .wallet-editorial .source-note,
 .page-contribution .team-iterations + .source-note,
-.page-final .sources { display: none; }
+.page-final .sources {
+  display: none;
+}
 .page-research .section,
 .page-research .wallet-section,
 .page-contribution .section,
-.page-final .section { padding-block: 42px; }
-.page-research .challenge { padding-block: 38px; }
-.page-research .section-heading { margin-bottom: 28px; }
-.page-research .research-grid { margin-top: 12px; }
-.page-research .wallet-section { padding-top: 12px; }
-.page-research .concept-detail { min-height: 0; padding-block: 24px; }
-.page-contribution .contribution { padding-block: 42px; }
-.page-contribution .assistant-layout { margin-top: 38px; }
-.page-contribution .reasoning { padding-top: 42px; }
-.page-final .reflection { padding-top: 42px; }
-.page-final .journey-content { min-height: 470px; }
-.page-pagination { margin-top: 15px; }
+.page-final .section {
+  padding-block: 42px;
+}
+.page-research .challenge {
+  padding-block: 38px;
+}
+.page-research .section-heading {
+  margin-bottom: 28px;
+}
+.page-research .research-grid {
+  margin-top: 12px;
+}
+.page-research .wallet-section {
+  padding-top: 12px;
+}
+.page-research .concept-detail {
+  min-height: 0;
+  padding-block: 24px;
+}
+.page-contribution .contribution {
+  padding-block: 42px;
+}
+.page-contribution .assistant-layout {
+  margin-top: 38px;
+}
+.page-contribution .reasoning {
+  padding-top: 42px;
+}
+.page-final .reflection {
+  padding-top: 42px;
+}
+.page-final .journey-content {
+  min-height: 470px;
+}
+.page-pagination {
+  margin-top: 15px;
+}
 @media (max-width: 650px) {
   .page-research .section,
   .page-research .wallet-section,
   .page-contribution .section,
-  .page-final .section { padding-block: 30px; }
-  .page-research .challenge { padding-block: 28px; }
-  .page-research .concept-detail { padding-block: 18px; }
-  .page-final .journey-content { min-height: 0; }
+  .page-final .section {
+    padding-block: 30px;
+  }
+  .page-research .challenge {
+    padding-block: 28px;
+  }
+  .page-research .concept-detail {
+    padding-block: 18px;
+  }
+  .page-final .journey-content {
+    min-height: 0;
+  }
 }

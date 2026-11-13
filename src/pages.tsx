@@ -65,6 +65,60 @@ export function OverviewPage() {
           </span>
         </div>
       </section>
+      <section className="about-me wrap" aria-labelledby="about-title">
+        <div className="about-portrait" aria-label="Portrait placeholder">
+          <div className="portrait-placeholder">
+            <span>
+              YOUR
+              <br />
+              PHOTO
+            </span>
+          </div>
+          <small>
+            Optional portrait
+            <br />
+            replace this placeholder
+          </small>
+        </div>
+        <div className="about-copy">
+          <Label>ABOUT THE DESIGNER</Label>
+          <h2 id="about-title">
+            I build technical systems
+            <br />
+            <em>around real people.</em>
+          </h2>
+          <p className="about-lead">
+            I’m Chen Jui-Tai, an Information Engineering student at Nanyang
+            Technological University. I joined DV2008 to bring my engineering
+            background into a more human, visual form of problem solving.
+          </p>
+          <div className="about-columns">
+            <p>
+              <strong>What I bring</strong>
+              <br />
+              AI and backend engineering experience across Jubo Health
+              Technologies, Binance and Gigabyte Technology. I’ve worked with
+              Python, Docker, cloud platforms, LLMs, VLMs, RAG systems and local
+              AI deployment.
+            </p>
+            <p>
+              <strong>Why this project</strong>
+              <br />I wanted to practise looking past the system itself: what
+              people understand, what they forget, and what makes an interaction
+              feel worth returning to.
+            </p>
+          </div>
+          <div
+            className="strengths"
+            aria-label="Strengths brought into the project"
+          >
+            <span>Systems thinking</span>
+            <span>AI prototyping</span>
+            <span>Product curiosity</span>
+            <span>Clear communication</span>
+          </div>
+        </div>
+      </section>
       <div className="project-meta wrap">
         <div>
           <span>DESIGNER</span>
@@ -108,7 +162,7 @@ export function OverviewPage() {
               text: "How I designed the AI Warranty Assistant experience.",
             },
             {
-              href: "testing",
+              href: "contribution",
               n: "04",
               title: "See what testing changed",
               text: "The feedback that shaped clearer entry points.",
