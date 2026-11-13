@@ -3429,6 +3429,45 @@ footer > a {
 .page-contribution .reasoning {
   display: none;
 }
+.engineering-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 34px 0 8px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+.legacy-test-copy {
+  display: none;
+}
+.engineering-proof > div {
+  background: var(--paper-2);
+  padding: 20px;
+}
+.engineering-proof span {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+.engineering-proof strong {
+  display: block;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.engineering-proof p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .engineering-proof {
+    grid-template-columns: 1fr;
+  }
+}
 
 .site-header {
   background: #e8e1d4;
