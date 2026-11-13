@@ -3199,8 +3199,8 @@ footer > a {
 
 .about-me {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 56px;
+  grid-template-columns: 330px 1fr;
+  gap: 60px;
   align-items: start;
   padding-block: 64px 70px;
   border-top: 1px solid var(--line);
@@ -3210,8 +3210,8 @@ footer > a {
   text-align: center;
 }
 .portrait-frame {
-  width: 220px;
-  height: 280px;
+  width: 320px;
+  height: 410px;
   margin: auto;
   border-radius: 2px;
   overflow: hidden;
@@ -3291,8 +3291,8 @@ footer > a {
     text-align: left;
   }
   .portrait-frame {
-    width: 126px;
-    height: 158px;
+    width: 160px;
+    height: 202px;
     margin: 0;
     flex-shrink: 0;
   }
