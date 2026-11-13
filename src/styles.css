@@ -2775,8 +2775,8 @@ footer > a {
   }
   .site-header nav.is-open {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 20px;
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
   .site-header nav a,
   .site-header nav a:first-child {
