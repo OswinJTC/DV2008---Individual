@@ -3562,10 +3562,10 @@ footer > a {
 }
 .case-map-heading {
   display: grid;
-  grid-template-columns: 0.75fr 1.35fr 1fr;
+  grid-template-columns: 0.7fr 1.4fr 1fr;
   gap: 34px;
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 .case-map-heading .eyebrow {
   margin: 0;
@@ -3583,71 +3583,94 @@ footer > a {
 .case-map-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
 }
 .case-map-grid li {
   min-width: 0;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 .case-map-grid a {
-  min-height: 150px;
-  padding: 16px;
+  min-height: 166px;
+  padding: 19px 18px 17px;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr auto;
   gap: 8px;
   position: relative;
-  background: var(--paper);
+  overflow: hidden;
+  isolation: isolate;
+  background: #f8f5ee;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(65, 53, 39, 0.03);
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease;
+}
+.case-map-grid a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0.14);
+  transform-origin: left;
+  transition: transform 0.24s ease;
 }
 .case-map-number {
   font-family: var(--serif);
-  font-size: 27px;
+  font-size: 34px;
   line-height: 1;
   color: var(--accent);
+  letter-spacing: -0.03em;
 }
 .case-map-phase {
-  font-size: 9px;
-  line-height: 1.3;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: right;
+  padding-top: 3px;
 }
 .case-map-grid strong {
   grid-column: 1 / -1;
   align-self: end;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.3;
 }
 .case-map-grid svg {
   grid-column: 2;
   justify-self: end;
-  transition: transform 0.2s ease;
+  color: var(--accent);
+  transition: transform 0.24s ease;
 }
 .case-map-grid a:hover,
 .case-map-grid a:focus-visible {
-  background: var(--ink);
-  color: var(--paper);
+  background: #f0e8da;
+  border-color: #9b896d;
+  box-shadow: 0 14px 26px -22px rgba(47, 36, 25, 0.72);
+  transform: translateY(-3px);
 }
 .case-map-grid a:hover .case-map-number,
 .case-map-grid a:focus-visible .case-map-number {
-  color: #d6c5a8;
+  color: #665137;
 }
 .case-map-grid a:hover .case-map-phase,
 .case-map-grid a:focus-visible .case-map-phase {
-  color: #bfb5a6;
+  color: #786b59;
 }
 .case-map-grid a:hover svg,
 .case-map-grid a:focus-visible svg {
   transform: translate(2px, -2px);
+}
+.case-map-grid a:hover::before,
+.case-map-grid a:focus-visible::before {
+  transform: scaleX(1);
 }
 #challenge,
 #wallet,
