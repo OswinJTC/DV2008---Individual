@@ -334,18 +334,18 @@ export function ContributionPage() {
                 </p>
                 <p>
                   That experience changed how I approached this project. I cared
-                  about intent, tool calls, retrieval, permissions and the exact
-                  moment an answer becomes useful - not just how the interface
-                  looks.
+                  about how people recognise an action, understand an answer and
+                  feel confident moving to the next step—not just how the
+                  interface looks.
                 </p>
                 <p className="contribution-method">
-                  I brought a systems mindset into the studio: start with the
-                  person’s question, make uncertainty visible, and only then
-                  decide what the interface should show. For the Warranty
-                  Assistant, that meant grounding every answer in a saved
-                  product, asking a follow-up when the context was incomplete,
-                  and giving people a clear path back to the original warranty
-                  details.
+                  I brought a user-centred design lens into the studio: start
+                  with the person’s question, reduce the amount they need to
+                  remember, and make important information easy to scan. For the
+                  Warranty Assistant, that meant using plain language, revealing
+                  details in a calm hierarchy, asking a follow-up when the
+                  question was unclear, and always giving people a clear path
+                  back to the original warranty details.
                 </p>
                 <div className="ownership">
                   <div>
