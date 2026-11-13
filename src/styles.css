@@ -4073,12 +4073,28 @@ footer > a {
   padding: 28px 0 42px;
   border-bottom-color: rgba(255, 255, 255, 0.18);
 }
+.page-contribution .contribution-lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding-bottom: 18px;
+}
 .page-contribution .contribution-cover .contribution-intro h1 {
   max-width: 12ch;
   color: #fffaf0;
-  font-size: clamp(50px, 6vw, 76px);
+  font-size: clamp(44px, 5.2vw, 66px);
   line-height: 0.98;
   letter-spacing: -0.045em;
+}
+.page-contribution .contribution-design-note {
+  max-width: 30ch;
+  margin: 28px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid #d4b98e;
+  color: #f0e7d8;
+  font-size: 16px;
+  line-height: 1.55;
 }
 .page-contribution .contribution-cover .contribution-intro h1 em {
   color: #cbb38e;

@@ -313,12 +313,18 @@ export function ContributionPage() {
             </span>
             <Label light>05 / MY CONTRIBUTION</Label>
             <div className="contribution-intro">
-              <h1>
-                I design chatbots that <em>make systems usable.</em>
-                <span className="legacy-test-copy">
-                  My focus: turning warranty information
-                </span>
-              </h1>
+              <div className="contribution-lead">
+                <h1>
+                  I design chatbots that <em>make systems usable.</em>
+                  <span className="legacy-test-copy">
+                    My focus: turning warranty information
+                  </span>
+                </h1>
+                <p className="contribution-design-note">
+                  Good interaction design makes the next step feel obvious —
+                  even when the system behind it is not.
+                </p>
+              </div>
               <div>
                 <span className="personal-tag">
                   CHEN JUI-TAI / ENGINEER + DESIGNER
