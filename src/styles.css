@@ -3802,3 +3802,52 @@ footer > a {
     min-height: 0;
   }
 }
+
+/* Emphasise the selected purchase-to-Wallet journey. */
+.wallet-editorial .mini-flow {
+  display: grid;
+  grid-template-columns: 1fr 26px 1fr 26px 1fr;
+  align-items: center;
+  gap: 8px;
+  max-width: 590px;
+  margin-top: 36px;
+}
+.mini-flow-step {
+  min-height: 92px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.mini-flow-step small {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.mini-flow-step strong {
+  color: var(--ink);
+  font-size: clamp(16px, 1.55vw, 20px);
+  line-height: 1.15;
+}
+.wallet-editorial .mini-flow > svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+}
+@media (max-width: 520px) {
+  .wallet-editorial .mini-flow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .wallet-editorial .mini-flow > svg {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+  .mini-flow-step {
+    min-height: 78px;
+  }
+}

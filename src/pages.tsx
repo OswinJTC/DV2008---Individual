@@ -265,12 +265,21 @@ export function DirectionsPage() {
             purchase. Product, expiry, coverage, receipt and claim details stay
             together until they are needed.
           </p>
-          <div className="mini-flow">
-            <span>Purchase</span>
-            <ArrowRight size={16} />
-            <span>Pass issued</span>
-            <ArrowRight size={16} />
-            <span>Add to Wallet</span>
+          <div className="mini-flow" aria-label="Purchase to Wallet flow">
+            <div className="mini-flow-step">
+              <small>01</small>
+              <strong>Purchase</strong>
+            </div>
+            <ArrowRight aria-hidden="true" />
+            <div className="mini-flow-step">
+              <small>02</small>
+              <strong>Pass issued</strong>
+            </div>
+            <ArrowRight aria-hidden="true" />
+            <div className="mini-flow-step">
+              <small>03</small>
+              <strong>Add to Wallet</strong>
+            </div>
           </div>
           <p className="source-note">
             Academic concept: merchant support is assumed. This is a proposed
