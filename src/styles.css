@@ -6,6 +6,7 @@
   font-display: swap;
   src: url(/fonts/portfolio-0.ttf) format("truetype");
 }
+
 @font-face {
   font-family: "DM Sans";
   font-style: normal;
@@ -3215,4 +3216,36 @@ footer > a {
   .contribution-intro h1 {
     font-size: 36px;
   }
+}
+
+/* Portfolio edit: keep the story light and let evidence stay quiet. */
+.page-research .research-foot,
+.page-research blockquote,
+.page-research .flow-details,
+.page-research .wallet-editorial .source-note,
+.page-contribution .team-iterations + .source-note,
+.page-final .sources { display: none; }
+.page-research .section,
+.page-research .wallet-section,
+.page-contribution .section,
+.page-final .section { padding-block: 42px; }
+.page-research .challenge { padding-block: 38px; }
+.page-research .section-heading { margin-bottom: 28px; }
+.page-research .research-grid { margin-top: 12px; }
+.page-research .wallet-section { padding-top: 12px; }
+.page-research .concept-detail { min-height: 0; padding-block: 24px; }
+.page-contribution .contribution { padding-block: 42px; }
+.page-contribution .assistant-layout { margin-top: 38px; }
+.page-contribution .reasoning { padding-top: 42px; }
+.page-final .reflection { padding-top: 42px; }
+.page-final .journey-content { min-height: 470px; }
+.page-pagination { margin-top: 15px; }
+@media (max-width: 650px) {
+  .page-research .section,
+  .page-research .wallet-section,
+  .page-contribution .section,
+  .page-final .section { padding-block: 30px; }
+  .page-research .challenge { padding-block: 28px; }
+  .page-research .concept-detail { padding-block: 18px; }
+  .page-final .journey-content { min-height: 0; }
 }
