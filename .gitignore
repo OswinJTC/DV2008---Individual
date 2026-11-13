@@ -1,0 +1,6 @@
+node_modules/
+dist/
+research/
+*.tsbuildinfo
+.DS_Store
+*.tar.gz
