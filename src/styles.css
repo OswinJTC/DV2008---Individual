@@ -4048,7 +4048,7 @@ footer > a {
   position: relative;
   overflow: hidden;
   padding: clamp(28px, 4vw, 52px) clamp(22px, 4vw, 54px) 0;
-  background: #3a342e;
+  background: #6b6358;
   color: #f7f2e8;
 }
 .contribution-watermark {
@@ -4120,13 +4120,13 @@ footer > a {
 .page-contribution .contribution-cover .engineering-proof > div {
   min-height: 180px;
   padding: 24px clamp(20px, 3vw, 34px);
-  background: #463e36;
+  background: #756b5f;
 }
 .page-contribution .contribution-cover .engineering-proof > div:nth-child(2) {
-  background: #4e453c;
+  background: #7d7265;
 }
 .page-contribution .contribution-cover .engineering-proof > div:nth-child(3) {
-  background: #564b40;
+  background: #85796b;
 }
 .page-contribution .contribution-cover .engineering-proof span {
   color: #d6bd96;
