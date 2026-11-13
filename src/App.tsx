@@ -179,17 +179,22 @@ export default function App() {
           )}
         </nav>
       </main>
-      <footer className="wrap">
-        <div>
-          <a className="wordmark" href="#/overview">
-            oswin<span>✳</span>
+      <footer className="site-footer">
+        <div className="wrap site-footer-inner">
+          <div>
+            <a className="wordmark" href="#/overview">
+              oswin<span>✳</span>
+            </a>
+            <p>Chen Jui Tai · Product / UX Designer</p>
+          </div>
+          <div className="footer-details">
+            <span>Matriculation · U2221528F</span>
+            <a href="mailto:ch0005ai@e.ntu.edu.sg">ch0005ai@e.ntu.edu.sg</a>
+          </div>
+          <a href="#/final">
+            Credits & reflection <ArrowUpRight size={18} />
           </a>
-          <p>Chen Jui Tai · Product / UX Designer</p>
         </div>
-        <span>DV2008 · INDIVIDUAL CASE STUDY · 2026</span>
-        <a href="#/final">
-          Credits & reflection <ArrowUpRight size={18} />
-        </a>
       </footer>
     </MotionConfig>
   );

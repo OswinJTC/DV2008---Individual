@@ -3430,6 +3430,43 @@ footer > a {
   display: none;
 }
 
+.site-header {
+  background: #e8e1d4;
+  border-bottom: 1px solid #d5ccbc;
+}
+.site-footer {
+  margin-top: 56px;
+  background: #e8e1d4;
+  border-top: 1px solid #d5ccbc;
+}
+.site-footer-inner {
+  min-height: 138px;
+  padding-block: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.footer-details {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.footer-details a {
+  color: var(--ink-soft);
+}
+@media (max-width: 650px) {
+  .site-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .footer-details {
+    order: 3;
+  }
+}
+
 .research-dashboard {
   display: grid;
   grid-template-columns: minmax(230px, 0.8fr) 1.2fr;
