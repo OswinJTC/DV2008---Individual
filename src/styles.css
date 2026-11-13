@@ -3196,19 +3196,22 @@ footer > a {
   padding-top: 28px;
   text-align: center;
 }
-.portrait-placeholder {
+.portrait-frame {
   width: 150px;
   height: 150px;
   margin: auto;
-  border: 1px dashed #a99a82;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
   background: #ebe4d7;
-  color: #88775e;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
+  box-shadow: 0 12px 28px rgba(48, 41, 33, 0.12);
+}
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 70%;
 }
 .about-portrait small {
   display: block;
@@ -3274,7 +3277,7 @@ footer > a {
     padding-top: 0;
     text-align: left;
   }
-  .portrait-placeholder {
+  .portrait-frame {
     width: 100px;
     height: 100px;
     margin: 0;

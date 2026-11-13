@@ -66,18 +66,17 @@ export function OverviewPage() {
         </div>
       </section>
       <section className="about-me wrap" aria-labelledby="about-title">
-        <div className="about-portrait" aria-label="Portrait placeholder">
-          <div className="portrait-placeholder">
-            <span>
-              YOUR
-              <br />
-              PHOTO
-            </span>
+        <div className="about-portrait">
+          <div className="portrait-frame">
+            <img
+              src={img("oswin-profile")}
+              alt="Chen Jui-Tai in front of the Hollywood sign"
+            />
           </div>
           <small>
-            Optional portrait
+            Chen Jui-Tai
             <br />
-            replace this placeholder
+            Information Engineering
           </small>
         </div>
         <div className="about-copy">
