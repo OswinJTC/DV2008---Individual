@@ -196,36 +196,37 @@ export function ResearchPage() {
               too much effort to keep.
             </p>
           </div>
-          <div className="research-grid">
-            <div className="lead-stat">
-              <span className="stat-number">
-                62.8<span>%</span>
-              </span>
-              <h3>didn’t track their warranties.</h3>
-              <p>
-                27 of 43 survey respondents. A tracking tool would need to earn
-                its place.
-              </p>
-              <div className="stat-rule">
-                <span style={{ width: "62.8%" }} />
+          <div className="research-dashboard" aria-label="Survey findings">
+            <div className="research-summary-card">
+              <span className="chart-kicker">43 RESPONDENTS</span>
+              <div className="donut-chart" aria-hidden="true">
+                <span>
+                  62.8<small>%</small>
+                </span>
               </div>
+              <h3>Don’t actively track warranties.</h3>
+              <p>The problem is remembering, not owning.</p>
             </div>
-            <div className="barriers">
-              <div>
-                <span>01</span>
-                <h3>The receipt disappears.</h3>
-                <p>62.8% reported losing receipts.</p>
-              </div>
-              <div>
-                <span>02</span>
-                <h3>The expiry slips by.</h3>
-                <p>53.5% reported forgetting expiry dates.</p>
-              </div>
-              <div>
-                <span>03</span>
-                <h3>The admin feels too heavy.</h3>
-                <p>51.2% found management time-consuming.</p>
-              </div>
+            <div className="research-bars">
+              <span className="chart-kicker">WHAT GETS IN THE WAY</span>
+              {[
+                ["Lost receipts", "62.8%", "62.8%"],
+                ["Forgotten expiry dates", "53.5%", "53.5%"],
+                ["Management feels heavy", "51.2%", "51.2%"],
+              ].map(([label, value, width]) => (
+                <div className="chart-row" key={label}>
+                  <div>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                  </div>
+                  <div className="chart-track">
+                    <span style={{ width }} />
+                  </div>
+                </div>
+              ))}
+              <small className="chart-source">
+                Multiple selections allowed · team survey
+              </small>
             </div>
           </div>
           <div className="research-foot">
