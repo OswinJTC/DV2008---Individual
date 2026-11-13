@@ -4102,6 +4102,9 @@ footer > a {
 .page-contribution .contribution-cover .ownership span {
   color: #eee5d9;
 }
+.page-contribution .contribution-cover .contribution-method {
+  max-width: 56ch;
+}
 .page-contribution .contribution-cover .ownership {
   grid-template-columns: 1fr 1fr;
   gap: 24px;

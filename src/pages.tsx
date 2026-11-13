@@ -338,19 +338,28 @@ export function ContributionPage() {
                   moment an answer becomes useful - not just how the interface
                   looks.
                 </p>
+                <p className="contribution-method">
+                  I brought a systems mindset into the studio: start with the
+                  person’s question, make uncertainty visible, and only then
+                  decide what the interface should show. For the Warranty
+                  Assistant, that meant grounding every answer in a saved
+                  product, asking a follow-up when the context was incomplete,
+                  and giving people a clear path back to the original warranty
+                  details.
+                </p>
                 <div className="ownership">
                   <div>
                     <strong>My contribution</strong>
                     <span>
-                      Assistant experience; research/interviews; early app and
-                      Wallet ideation.
+                      Assistant interaction model, interview synthesis, early
+                      app direction and Wallet concept development.
                     </span>
                   </div>
                   <div>
                     <strong>Our team</strong>
                     <span>
-                      Shared research findings, product direction, Wallet system
-                      and collaborative testing.
+                      Shared research findings, product direction, Wallet system,
+                      visual language and collaborative testing.
                     </span>
                   </div>
                 </div>
