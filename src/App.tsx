@@ -1,34 +1,199 @@
-import React, { useState } from 'react';
-import { motion, MotionConfig } from 'framer-motion';
-import { ArrowUpRight, ArrowDown, ArrowRight, Check, Smartphone, ShoppingBag, Mail, Layers, MessageCircle, FileText, ShieldCheck, Search, ChevronRight, Plus, Minus } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { MotionConfig } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
+import {
+  OverviewPage,
+  ResearchPage,
+  DirectionsPage,
+  ContributionPage,
+  TestingPage,
+  ExperiencePage,
+  ReflectionPage,
+} from "./pages";
 
-const img = (name: string) => `/images/${name}.webp`;
-function Label({children, light=false}: {children: React.ReactNode;light?:boolean}) {return <div className={`eyebrow ${light?'light':''}`}><span className="tiny-cross">✳</span>{children}</div>}
-function Reveal({children,className=''}:{children:React.ReactNode;className?:string}) {return <motion.div className={className} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.12}} transition={{duration:0.65}}>{children}</motion.div>}
-function Phone({name,alt,className='',eager=false}:{name:string;alt:string;className?:string;eager?:boolean}){return <div className={`phone ${className}`}><img src={img(name)} alt={alt} loading={eager?'eager':'lazy'}/></div>}
-const concepts = [
- {name:'Standalone app',icon:Smartphone,tag:'Full control. A new commitment.',body:'A dedicated home for every warranty, with full control over the experience.',trade:'Downloading, setting up and maintaining another app adds work to a low-frequency task.',num:'01'},
- {name:'Shopee integration',icon:ShoppingBag,tag:'Close to the purchase. Limited reach.',body:'Warranty records sit beside the shopping history people already use.',trade:'Purchases from other platforms and physical stores remain outside the system.',num:'02'},
- {name:'Email / Gmail',icon:Mail,tag:'Passive capture. Uneven information.',body:'An extension could collect receipts from an existing inbox with little manual effort.',trade:'Inbox access raises privacy concerns; inconsistent receipt formats complicate collection.',num:'03'},
- {name:'Apple Wallet',icon:Layers,tag:'A familiar place. Less to maintain.',body:'Merchant-issued passes bring product, receipt and coverage details into one familiar place.',trade:'Depends on merchant support and excludes people who do not use Apple Wallet.',num:'04'}
+const pages = [
+  {
+    id: "overview",
+    label: "Overview",
+    title: "The project",
+    component: OverviewPage,
+  },
+  {
+    id: "research",
+    label: "Research",
+    title: "The problem & insights",
+    component: ResearchPage,
+  },
+  {
+    id: "directions",
+    label: "Directions",
+    title: "Exploring the alternatives",
+    component: DirectionsPage,
+  },
+  {
+    id: "contribution",
+    label: "My contribution",
+    title: "The AI Warranty Assistant",
+    component: ContributionPage,
+  },
+  {
+    id: "testing",
+    label: "Testing",
+    title: "Feedback & iteration",
+    component: TestingPage,
+  },
+  {
+    id: "experience",
+    label: "Final experience",
+    title: "The connected journey",
+    component: ExperiencePage,
+  },
+  {
+    id: "reflection",
+    label: "Reflection",
+    title: "What I learned",
+    component: ReflectionPage,
+  },
 ];
-function Concepts(){const [active,setActive]=useState(3);const item=concepts[active];return <div className="concept-explorer"><div className="concept-tabs" aria-label="Explore design directions">{concepts.map((c,i)=><button key={c.name} aria-pressed={i===active} onClick={()=>setActive(i)} className={i===active?'active':''}><span className="concept-top"><c.icon size={25} strokeWidth={1.4}/><span>{c.num}</span></span><span className="concept-name">{c.name}</span><span className="concept-bottom">{i===3?'Selected direction':'Explore the trade-off'}<ArrowUpRight size={16}/></span></button>)}</div><div className="concept-detail" aria-live="polite"><div><span className="small-label">{active===3?'WHY OUR TEAM CHOSE IT':'THE OPPORTUNITY'}</span><h3>{item.tag}</h3><p>{item.body}</p></div><div><span className="small-label">THE TRADE-OFF</span><p>{item.trade}</p>{active===3&&<span className="selected-note"><Check size={15}/> Fits occasional use without a new tracking routine.</span>}</div></div></div>}
-const scenarios=[
- {question:'Is this issue covered?',short:'Understand coverage',icon:ShieldCheck,user:'What does my headphone warranty cover?',heading:'Start with the right product.',explanation:'A general question can refer to more than one purchase. The assistant first helps identify the warranty, then explains the relevant coverage.',reply:'I found two headphones. Which one do you mean?',action:'Sony WH-1000XM5',result:'The prototype explains parts and labour coverage in plain language, alongside the product’s warranty details.',next:'View the warranty',asset:'warranty-pass'},
- {question:'Where is my receipt?',short:'Retrieve a receipt',icon:FileText,user:'Where is the receipt for my Sony headphones?',heading:'Bring the evidence into reach.',explanation:'Retrieval is part of the conversation. Connect the question to the purchase record so the user does not need to remember where it was saved.',reply:'Let’s find the purchase record attached to your warranty.',action:'Find Sony purchase record',result:'The warranty pass keeps the product and purchase information together, with access to the original proof of purchase.',next:'View purchase details',asset:'warranty-pass'},
- {question:'How do I make a claim?',short:'Find the next step',icon:MessageCircle,user:'How do I make a claim for my headphones?',heading:'Turn uncertainty into a next step.',explanation:'Guidance connects back to the claim flow. The user can describe the issue, attach evidence and follow the progress of the claim.',reply:'First, check the coverage for this product. Then describe what went wrong and add relevant photos or video.',action:'Show the claim steps',result:'The team’s claim form asks for the issue and supporting evidence. A separate timeline explains the status and any action needed.',next:'View the claim form',asset:'claim-form'}
-];
-function AssistantDemo(){const [selected,setSelected]=useState(0);const [step,setStep]=useState(0);const s=scenarios[selected];return <div className="assistant-layout"><div className="assistant-copy"><Label light>06 / MY INTERACTION DESIGN</Label><h2>A question.<br/>A little clarity.<br/><em>A way forward.</em></h2><p>Instead of asking people to decode a warranty, I focused on helping them ask the question they already have.</p><div className="scenario-buttons" aria-label="Assistant scenarios">{scenarios.map((c,i)=><button aria-pressed={selected===i} onClick={()=>{setSelected(i);setStep(0)}} key={c.question} className={selected===i?'active':''}><c.icon size={19}/><span>{c.question}</span><ArrowUpRight size={18}/></button>)}</div><div className="scenario-description" aria-live="polite"><h3>{s.heading}</h3><p>{s.explanation}</p></div><p className="demo-note">Interactive illustration · scripted, not live AI.<br/>Receipt and claim dialogues illustrate capabilities described in the project; they are not tested screens.</p></div><div className="demo-stage"><div className="demo-phone"><div className="device-status"><span>9:41</span><span>● ▰</span></div><div className="demo-header"><MessageCircle size={20}/><strong>Warranty Assistant</strong><span>✳</span></div><div className="demo-messages" aria-live="polite"><span className="conversation-label">{s.short}</span><div className="user-bubble">{s.user}</div><div className="assistant-bubble"><span className="assistant-symbol">✳</span><p>{s.reply}</p></div>{step===0?<button className="product-choice" onClick={()=>setStep(1)}><span><small>CONTINUE THE SCENARIO</small>{s.action}</span><ChevronRight size={18}/></button>:step===1?<><div className="user-bubble">{s.action}</div><div className="assistant-bubble result"><strong>{selected===0?'Coverage, in plain language':selected===1?'Your purchase information':'From question to claim'}</strong><p>{s.result}</p><button onClick={()=>setStep(2)}>{s.next}<ArrowRight size={15}/></button></div></>:<div className="demo-source"><img src={img(s.asset)} alt={selected===2?'Original claim form from Assignment 3':'Original warranty pass from Assignment 3'}/><span>Original project screen · A3</span></div>}</div><div className="demo-footer"><span>{step+1} / 3</span><button onClick={()=>setStep(0)}>Restart scenario ↺</button></div></div><span className="stage-caption">Try a question, then follow the next action.</span></div></div>}
-const journey=[{name:'Purchase',title:'Start where the purchase happens.',text:'In our concept, the merchant issues a digital warranty pass after purchase.',asset:'early-flow-13',landscape:true},{name:'Save pass',title:'Keep the essentials together.',text:'Product, purchase date, expiry, coverage and receipt information live in one pass.',asset:'warranty-pass'},{name:'Retrieve',title:'Find it at the moment of need.',text:'Browse the warranty list, search for a product, or ask the assistant.',asset:'wallet-overview'},{name:'Understand',title:'Read it. Or ask about it.',text:'The warranty pass offers direct coverage access; the assistant adds contextual explanation.',asset:'assistant-original'},{name:'Claim',title:'Move from information to action.',text:'Describe the issue and provide relevant evidence in the team’s claim flow.',asset:'claim-form'},{name:'Track',title:'Know what happens next.',text:'The claim timeline communicates progress, contact details and any action needed.',asset:'claim-progress'}];
-function Journey(){const [active,setActive]=useState(3);return <div className="journey"><div className="journey-tabs" aria-label="Explore the final experience">{journey.map((s,i)=><button key={s.name} aria-pressed={active===i} className={i===active?'active':''} onClick={()=>setActive(i)}><span>0{i+1}</span>{s.name}<ArrowRight size={15}/></button>)}</div><div className="journey-content"><div><span className="small-label">THE CONNECTED EXPERIENCE / 0{active+1}</span><h3>{journey[active].title}</h3><p>{journey[active].text}</p><div className="assistance-tag"><MessageCircle size={18}/> Optional guidance, alongside the interface.</div></div><div className={`journey-visual ${journey[active].landscape?'landscape':''}`}><img key={active} src={img(journey[active].asset)} alt={`${journey[active].name}: original project ${journey[active].landscape?'wireframe flow':'prototype screen'}`} loading="lazy"/></div></div></div>}
-export default function App(){const [showOriginal,setShowOriginal]=useState(false);return <MotionConfig reducedMotion="user"><a className="skip-link" href="#main">Skip to case study</a><header><a className="wordmark" href="#top">oswin<span>✳</span></a><nav aria-label="Case study navigation"><a href="#research">The problem</a><a href="#contribution">My contribution</a><a href="#learning">Reflections</a></nav><span className="header-note">DESIGN CASE STUDY / 2026</span></header><main id="main"><section className="hero wrap" id="top"><div className="hero-copy"><Label>DV2008 / INTERFACE DESIGN</Label><h1>Rethinking<br/>warranty<br/><em>management.</em></h1><p className="hero-deck">Less searching. Less second-guessing.<br/>A clearer way to use what you already own.</p><p className="hero-summary">Helping young adults retrieve, understand and act on warranty information—without another system to maintain.</p><a href="#contribution" className="primary-link">Explore my contribution <ArrowUpRight size={18}/></a><a className="scroll-note" href="#research"><span className="circle-arrow"><ArrowDown size={17}/></span> THE THINKING BEHIND THE DESIGN</a></div><div className="hero-art"><div className="hero-orbit"/><span className="art-kicker">WARRANTY, UNDERSTOOD.</span><Phone name="wallet-overview" alt="Original team prototype showing saved warranty cards" className="hero-wallet" eager/><Phone name="assistant-original" alt="Oswin’s original Warranty Assistant conversation prototype" className="hero-assistant" eager/><div className="floating-note"><span className="note-dot"/><span>From stored information<br/><strong>to useful answers.</strong></span></div><span className="art-caption">APPLE WALLET CONCEPT + AI ASSISTANCE</span></div></section><div className="project-meta wrap"><div><span>DESIGNER</span><p>Oswin / Chen Jui Tai</p></div><div><span>ROLE</span><p>Product / UX Designer</p></div><div className="meta-focus"><span>MY FOCUS</span><p>AI Warranty Assistant<br/><small>Interaction design, research & ideation</small></p></div><div><span>CONTEXT</span><p>Team project · 2026<br/><small>Academic concept</small></p></div></div>
-<section id="research" className="section wrap"><Reveal><Label>01 / THE HUMAN PROBLEM</Label><div className="section-heading"><h2>Saved somewhere.<br/><em>Useful nowhere.</em></h2><p>Our team studied how young adults manage warranties. The problem began long before a claim: information was scattered, forgotten or too much effort to keep.</p></div><div className="research-grid"><div className="lead-stat"><span className="stat-number">62.8<span>%</span></span><h3>didn’t track their warranties.</h3><p>27 of 43 survey respondents.<br/>A tracking tool would need to earn its place.</p><div className="stat-rule"><span style={{width:'62.8%'}}/></div></div><div className="barriers"><div><span>01</span><h3>The receipt disappears.</h3><p>62.8% reported losing receipts.</p></div><div><span>02</span><h3>The expiry slips by.</h3><p>53.5% reported forgetting expiry dates.</p></div><div><span>03</span><h3>The admin feels too heavy.</h3><p>51.2% found management time-consuming.</p></div></div></div><div className="research-foot"><span>OUR TEAM’S RESEARCH</span><p>43 survey respondents · 6 interviews<br/><small>Survey: 95.3% aged 18–25. Barrier question allowed multiple selections. A1, pp. 17–19, 27.</small></p></div><blockquote>“If I do not fully understand the terms and conditions of the warranty, usually I’ll ignore it.”<cite>Interview participant · Assignment 1, p. 31</cite></blockquote></Reveal></section>
-<section className="challenge"><div className="wrap"><Label>02 / THE DESIGN CHALLENGE</Label><h2>How might we make warranties<br/><em>easy to retrieve, understand<br/>and act on</em>—without building<br/>a new tracking habit?</h2><span className="challenge-mark" aria-hidden="true">↗</span></div></section>
-<section id="directions" className="section wrap"><Reveal><Label>03 / EXPLORING THE TRADE-OFFS</Label><div className="section-heading"><h2>Four directions.<br/><em>One less thing to manage.</em></h2><p>Our team compared each idea against effort, existing habits and occasional use. I contributed to ideation, including the standalone app and Apple Wallet directions.</p></div><Concepts/></Reveal></section>
-<section className="wallet-section wrap"><div className="wallet-editorial"><Label>04 / OUR TEAM’S DIRECTION</Label><h2>A warranty.<br/><em>Already in your wallet.</em></h2><p>A merchant-issued digital pass could be added to Apple Wallet after purchase. Product, expiry, coverage, receipt and claim details stay together until they are needed.</p><div className="mini-flow"><span>Purchase</span><ArrowRight size={16}/><span>Pass issued</span><ArrowRight size={16}/><span>Add to Wallet</span></div><p className="source-note">Academic concept: merchant support is assumed. This is a proposed Wallet experience, not a shipped Apple integration. Access for non-Apple users remains a limitation.</p></div><div className="pass-stage"><Phone name="warranty-pass" alt="Original Sony headphone warranty pass with purchase, expiry and coverage information"/><span>ONE PASS. THE DETAILS THAT MATTER.</span></div><details className="flow-details"><summary>See the early purchase-to-claim wireframes <Plus size={17}/></summary><div className="early-flows">{[13,14,15,16].map(n=><img key={n} src={img(`early-flow-${n}`)} alt={`Original early user flow, Assignment 2 page ${n}`} loading="lazy"/>)}</div></details></section>
-<section id="contribution" className="contribution"><div className="wrap"><Label light>05 / MY CONTRIBUTION</Label><div className="contribution-intro"><h2>My focus:<br/>turning warranty<br/>information<br/><em>into answers.</em></h2><div><span className="personal-tag">OSWIN / INTERACTION DESIGN</span><p className="large-copy">Having the information<br/>isn’t the same as<br/><span>knowing what to do.</span></p><p>A centralised pass solved part of the problem. But people could still be unsure whether an issue was covered, what the terms meant, or how to begin a claim.</p><p>My main design focus was the AI Warranty Assistant: an optional layer for finding information, explaining it in context and guiding the next action.</p><div className="ownership"><div><strong>My contribution</strong><span>Assistant experience; research/interviews; early app and Wallet ideation.</span></div><div><strong>Our team</strong><span>Shared research findings, product direction, Wallet system and collaborative testing.</span></div></div></div></div><AssistantDemo/><button className="original-toggle" aria-expanded={showOriginal} onClick={()=>setShowOriginal(!showOriginal)}>{showOriginal?<Minus size={18}/>:<Plus size={18}/>} View my original Assistant prototype screen <span>A3 / P. 9</span></button>{showOriginal&&<div className="original-panel"><img src={img('assistant-original')} alt="Original AI Warranty Assistant screenshot, identifying headphones and explaining parts and labour coverage"/><div><h3>The original interaction</h3><p>The conversation resolves which headphones the user means, explains coverage, and links back to the warranty.</p><p className="demo-note">This is a design prototype. Its example response is not a verified statement of a real product’s warranty policy.</p></div></div>}</div></section>
-<section className="section wrap reasoning"><Label>07 / THE REASONING BEHIND THE INTERFACE</Label><h2>Every interaction<br/><em>has a reason.</em></h2>{[{n:'01',p:'Terms are hard to interpret.',d:'Start with a question.',w:'I used conversation to connect a user’s situation to relevant warranty information. Access alone had not resolved uncertainty.'},{n:'02',p:'The next step is unclear.',d:'Make the answer actionable.',w:'I connected contextual explanations to the warranty and claim journey. Research described both unclear starting points and troublesome processes.'},{n:'03',p:'People rarely use warranties.',d:'Keep the path easy to recognise.',w:'I treated discoverability as part of the interaction. The clearer chat-bubble entry point signals what the assistant is for, without requiring a new habit.'}].map(r=><Reveal className="reason-row" key={r.n}><span>{r.n}</span><div><span className="small-label">THE PROBLEM</span><h3>{r.p}</h3></div><div><span className="small-label">MY DESIGN DECISION</span><h3>{r.d}</h3><p>{r.w}</p></div></Reveal>)}</section>
-<section id="testing" className="testing section"><div className="wrap"><Label>08 / WHAT TESTING CHANGED</Label><div className="section-heading"><h2>It worked.<br/><em>But could people find it?</em></h2><p>Our team tested four tasks with four participants. All completed the main claim flow and found the receipt. Coverage and filtering exposed a different problem: discoverability.</p></div><div className="test-findings"><div><strong>4 participants</strong><span>Formative prototype test</span></div><p>Most looked for coverage manually and took time to spot it. They could use the assistant <strong>when prompted</strong>, but its original icon was unclear.</p></div><div className="iteration"><div className="iteration-label"><span className="small-label">MY ASSISTANT FOCUS</span><h3>A small icon.<br/>A clearer invitation.</h3><p>The entry point needed to communicate conversation, not an ambiguous AI symbol.</p></div><div className="icon-comparison"><div><span className="small-label">BEFORE</span><img src={img('assistant-icon-before')} alt="Original blue sparkle icon"/><p>AI symbolism</p></div><ArrowRight size={28} strokeWidth={1}/><div><span className="small-label">AFTER</span><img src={img('assistant-icon-after')} alt="Revised black chat bubble with sparkle"/><p>Recognisable conversation</p></div></div><div className="feedback-strip"><span>FEEDBACK</span><p>Chatbot icon wasn’t clear.</p><ArrowRight size={18}/><span>RESPONSE</span><p>Redesigned as a cleaner chat bubble.</p></div></div><div className="team-iterations"><div><span className="small-label">TEAM ITERATION / INFORMATION HIERARCHY</span><h3>Coverage needed to stand out.</h3><p>Terms blended into other details. The team made them a distinct blue link and clarified the proof-of-purchase button.</p><img src={img('receipt-button-after')} alt="Updated distinct claim and proof-of-purchase buttons" loading="lazy"/></div><div><span className="small-label">TEAM ITERATION / EXPECTED LOCATION</span><h3>Put filters where people looked.</h3><p>Participants tried the sort control first. The team moved tag filtering there, rather than leaving it under search.</p><img src={img('filter-after')} alt="Updated tag filters located under the sort control" loading="lazy"/></div></div><p className="source-note">Source: A3, pp. 14–19. These are observations from a small formative test. The PDFs do not report a second test after the changes, so improved outcomes remain unverified.</p></div></section>
-<section className="section wrap" id="experience"><Label>09 / THE FINAL EXPERIENCE</Label><div className="section-heading"><h2>One connected journey.<br/><em>Help when it’s needed.</em></h2><p>Our team’s final concept connects the purchase to the claim. My assistant adds an optional route to understanding, while the direct interface stays available.</p></div><Journey/></section>
-<section className="reflection section" id="learning"><div className="wrap"><Label>10 / WHAT I’M TAKING FORWARD</Label><h2>The real design work<br/>is making information<br/><em>mean something.</em></h2><div className="reflection-grid"><div><span>01</span><h3>Storage is only the beginning.</h3><p>I learned to distinguish finding a record from understanding it. The assistant’s role became interpretation and guidance, alongside the original information.</p></div><div><span>02</span><h3>Less maintenance is a design goal.</h3><p>More features can create more friction. For an occasional experience, the cost of learning and remembering matters as much as the available functionality.</p></div><div><span>03</span><h3>Discoverability is functionality.</h3><p>A useful assistant is only useful if people recognise how to reach it. Testing made me pay closer attention to entry points and information hierarchy.</p></div></div><div className="next-steps"><div><span className="small-label">WHAT I WOULD IMPROVE NEXT</span><h3>Test the confidence,<br/><em>not just the clicks.</em></h3></div><ol><li>Observe more users without prompting them to try the assistant.</li><li>Explore stronger entry points and measure whether people discover them.</li><li>Investigate trust in AI explanations and the handoff to official warranty terms.</li></ol></div><p className="source-note">These are proposed next steps, not completed research.</p><details className="sources"><summary>Project credits & source notes <Plus size={18}/></summary><div><p><strong>Individual case study:</strong> Oswin / Chen Jui Tai. Personal contribution is described in the author’s brief.</p><p><strong>Team ZZZ WIN:</strong> Choong Zixuan, Zhu Di (Jesse), Seaw Zhi Yi, Chen Jui Tai (Oswin).</p><p><strong>Assignment 1 — Information Gathering:</strong> pp. 17–19 (survey sample and barriers), 24 (claim deterrents, 21 respondents), 27–32 (interviews). <strong>Assignment 2 — Ideation & Prototyping:</strong> pp. 4–12 (alternatives), 13–16 (early flows), 19–21 (assumptions and limitations). <strong>Assignment 3 — Refinement & Final Design:</strong> pp. 8–12 (prototype screens), 14–19 (testing and revisions), 21–23 (final journey).</p><p>All product screenshots are extracted from the supplied project PDFs. Interactive dialogues are labelled illustrative. No live AI, merchant integration or production warranty service is implemented.</p></div></details></div></section></main><footer className="wrap"><div><a className="wordmark" href="#top">oswin<span>✳</span></a><p>Chen Jui Tai · Product / UX Designer</p></div><span>DV2008 · INDIVIDUAL CASE STUDY · 2026</span><a href="#top">Back to top <ArrowUpRight size={18}/></a></footer></MotionConfig>}
-
+function currentPage() {
+  const id = window.location.hash.replace(/^#\//, "");
+  return pages.some((p) => p.id === id) ? id : "overview";
+}
+export default function App() {
+  const [pageId, setPageId] = useState(currentPage);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const main = useRef<HTMLElement>(null);
+  const initial = useRef(true);
+  const index = pages.findIndex((p) => p.id === pageId);
+  const page = pages[index];
+  const Page = page.component;
+  useEffect(() => {
+    const handleNavigation = () => {
+      if (window.location.hash === "#main") return;
+      setPageId(currentPage());
+      setMenuOpen(false);
+    };
+    const onEscape = (event: KeyboardEvent) => {
+      if (
+        event.key === "Escape" &&
+        document
+          .getElementById("menu-toggle")
+          ?.getAttribute("aria-expanded") === "true"
+      ) {
+        setMenuOpen(false);
+        document.getElementById("menu-toggle")?.focus();
+      }
+    };
+    window.addEventListener("hashchange", handleNavigation);
+    window.addEventListener("keydown", onEscape);
+    return () => {
+      window.removeEventListener("hashchange", handleNavigation);
+      window.removeEventListener("keydown", onEscape);
+    };
+  }, []);
+  useEffect(() => {
+    document.title = `${page.label} — Warranty, understood · Oswin Chen`;
+    if (!initial.current) {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      main.current?.focus({ preventScroll: true });
+    }
+    initial.current = false;
+  }, [page]);
+  return (
+    <MotionConfig reducedMotion="user">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <header className="site-header">
+        <a className="wordmark" href="#/overview" aria-label="Oswin — overview">
+          oswin<span>✳</span>
+        </a>
+        <button
+          id="menu-toggle"
+          className="menu-toggle"
+          aria-controls="page-navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          <span>{menuOpen ? "Close" : "Menu"}</span>
+        </button>
+        <nav
+          id="page-navigation"
+          className={menuOpen ? "is-open" : ""}
+          aria-label="Case study navigation"
+        >
+          {pages.map((p) => (
+            <a
+              key={p.id}
+              href={`#/${p.id}`}
+              aria-current={p.id === pageId ? "page" : undefined}
+              onClick={() => setMenuOpen(false)}
+            >
+              {p.label}
+            </a>
+          ))}
+        </nav>
+      </header>
+      <main
+        id="main"
+        ref={main}
+        tabIndex={-1}
+        className={`page page-${pageId}`}
+      >
+        {index > 0 && (
+          <div className="page-context wrap">
+            <a href="#/overview">Warranty, understood</a>
+            <span>/</span>
+            <span>{page.label}</span>
+            <span className="chapter-count">
+              Chapter {String(index).padStart(2, "0")} / 06
+            </span>
+          </div>
+        )}
+        <div key={pageId}>
+          <Page />
+        </div>
+        <nav className="page-pagination wrap" aria-label="Chapter navigation">
+          {index > 0 ? (
+            <a href={`#/${pages[index - 1].id}`}>
+              <span>
+                <ArrowLeft size={17} /> Previous
+              </span>
+              <strong>{pages[index - 1].label}</strong>
+            </a>
+          ) : (
+            <div />
+          )}
+          {index < pages.length - 1 ? (
+            <a className="next-page" href={`#/${pages[index + 1].id}`}>
+              <span>
+                Next chapter <ArrowRight size={17} />
+              </span>
+              <strong>{pages[index + 1].title}</strong>
+            </a>
+          ) : (
+            <a className="next-page" href="#/overview">
+              <span>
+                Back to the project <ArrowUpRight size={17} />
+              </span>
+              <strong>Overview</strong>
+            </a>
+          )}
+        </nav>
+      </main>
+      <footer className="wrap">
+        <div>
+          <a className="wordmark" href="#/overview">
+            oswin<span>✳</span>
+          </a>
+          <p>Chen Jui Tai · Product / UX Designer</p>
+        </div>
+        <span>DV2008 · INDIVIDUAL CASE STUDY · 2026</span>
+        <a href="#/reflection">
+          Credits & reflection <ArrowUpRight size={18} />
+        </a>
+      </footer>
+    </MotionConfig>
+  );
+}

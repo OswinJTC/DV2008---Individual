@@ -37,3 +37,10 @@ Use embedded image extraction to avoid cutting screenshots at slide boundaries. 
 ## Evidence
 A1 pp17–19: n=43 survey, tracking and barriers. A1 p24: n=21 subgroup for claim deterrents. A1 pp27–32: n=6 interviews and interpretation barriers. A2 pp4–12: concept trade-offs. A2 pp19–21: merchant assumption and limitations. A3 pp9–12: assistant capability and team system. A3 pp14–19: n=4 usability tests, prompted assistant use, iteration. A3 pp21–23: final flow and information architecture.
 Avoid A1 p21's internally inconsistent narrative count, and p35's broader statement about all interviewees; use the explicit p28 finding if needed.
+
+
+## Revision: chapter-based reading and legibility
+
+Seven navigable pages replace the long single-page structure: Overview, Research, Directions, My contribution, Testing, Final experience, Reflection. Header links, active chapter indication, mobile menu, breadcrumb, and previous/next links support either skimming or sequential reading. Hash routes avoid deployment rewrite dependencies and support shareable direct links.
+
+Typography: local DM Sans replaces the thin serif and repeated italics. Reading text is 16–18px; evidence notes 14px; headings use restrained responsive sizes and balanced natural wrapping. Reduced section spacing, 35–65 character reading measures, stronger muted-text contrast, generous line height and larger interaction labels improve reading. Exact prototype screenshots remain original and can contain smaller source UI text.

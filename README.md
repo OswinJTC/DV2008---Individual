@@ -17,7 +17,9 @@ React + TypeScript + Vite, Tailwind CSS v4, Framer Motion, Lucide icons. Static 
 
 ## Editing
 
-- `src/App.tsx`: narrative, reusable components, concept tabs, scripted assistant and six-stage journey.
+- `src/App.tsx`: seven chapter routes, persistent header, mobile menu and previous/next chapter navigation.
+- `src/pages.tsx`: chapter content, individual contribution and evidence.
+- `src/components/CaseStudy.tsx`: shared visuals, concept explorer, scripted assistant and final journey.
 - `src/styles.css`: design system, desktop/tablet/mobile styles and reduced-motion support.
 - `public/images`: original extracted PDF images, WebP compressed.
 - `DESIGN_PLAN.md`: pre-implementation structure, hierarchy, components, visual system and evidence map.
@@ -31,4 +33,13 @@ All project assets are extracted from the three supplied DV2008 PDFs. Embedded s
 
 ## Verification
 
-TypeScript and production build; DOM interaction tests for concept selection, three complete assistant scenarios with reset, original-screen disclosure, six journey stages, anchors and image accessibility. Browser screenshot QA was unavailable because the computer-use browser host could not connect; responsive rendering still requires visual review.
+TypeScript and production build; DOM interaction tests for concept selection, three complete assistant scenarios with reset, original-screen disclosure, six journey stages, anchors and image accessibility. The chapter revision passes 14 tests, including direct chapter URLs, one h1 per page, active navigation, focus transfer, mobile menu/Escape and history navigation. Browser screenshot QA was unavailable: browser host connection failed and native Chrome control timed out; responsive rendering still requires visual review.
+
+
+## Chapter URLs and Cloudflare
+
+The public deployment is https://dv2008---individual.oswin9089.workers.dev . Chapters use `/#/overview`, `/#/research`, `/#/directions`, `/#/contribution`, `/#/testing`, `/#/experience`, and `/#/reflection`. Hash routing supports direct links and refreshes on the existing static hosting setup without server rewrites. Only the selected chapter is rendered.
+
+Cloudflare builds the GitHub `main` branch with `npm run build` and deploys `dist`. The production workers.dev route must remain enabled. The original Sites manifest is retained for that separate hosting target; Cloudflare uses its dashboard build configuration.
+
+Typography now uses local DM Sans throughout, with 16–18px narrative copy, 14px source notes and a smaller display scale. Phone UI and metadata have separate compact styles. No external font request is required.
