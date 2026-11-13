@@ -405,7 +405,7 @@ export function TestingPage() {
             <h1>
               The core flow worked. <em>Testing made it easier to find.</em>
             </h1>
-            <p>
+            <p className="testing-summary">
               Four participants tested the prototype and completed the main
               claim flow. What changed was not the task itself, but the
               discoverability and hierarchy of the information around it.

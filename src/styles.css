@@ -1130,6 +1130,15 @@ summary::-webkit-details-marker {
 .testing .section-heading h1 {
   max-width: 17ch;
 }
+.testing .section-heading > .testing-summary {
+  max-width: 31ch;
+  align-self: center;
+  padding: 12px 0 12px 24px;
+  border-left: 2px solid #b39b78;
+  color: #6d665c;
+  font-size: 16px;
+  line-height: 1.75;
+}
 .testing .team-iterations {
   gap: 42px;
   margin-top: 0;
