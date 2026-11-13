@@ -138,23 +138,26 @@ describe("Chapter navigation", () => {
         ).toBeNull();
     },
   );
-  it("navigates through header and next chapter without retaining other pages", async () => {
+  it("navigates through the header without retaining other pages", async () => {
     render(<App />);
     const user = userEvent.setup();
     await user.click(
       screen.getByRole("link", { name: "Research & direction", exact: true }),
     );
-    expect(screen.getAllByRole("heading", { level: 1 })[0].textContent).toContain(
-      "Saved somewhere.",
-    );
+    expect(
+      screen.getAllByRole("heading", { level: 1 })[0].textContent,
+    ).toContain("Saved somewhere.");
     expect(screen.queryByText("Rethinking warranty")).toBeNull();
     expect(document.activeElement?.id).toBe("main");
     await user.click(
       screen.getByRole("link", {
-        name: /Next chapter The Assistant and what changed/,
+        name: "My work & testing",
+        exact: true,
       }),
     );
-    expect(screen.getByText("My focus: turning warranty information", { exact: false })).toBeTruthy();
+    expect(
+      screen.getByText("I design chatbots that", { exact: false }),
+    ).toBeTruthy();
     expect(screen.queryByText("27 of 43 survey respondents.")).toBeNull();
   });
   it("closes the mobile menu on navigation and Escape", async () => {
@@ -179,15 +182,15 @@ describe("Chapter navigation", () => {
       window.history.replaceState(null, "", "/#/final");
       window.dispatchEvent(new HashChangeEvent("hashchange"));
     });
-    expect(screen.getAllByRole("heading", { level: 1 })[0].textContent).toContain(
-      "One connected journey.",
-    );
+    expect(
+      screen.getAllByRole("heading", { level: 1 })[0].textContent,
+    ).toContain("One connected journey.");
     await act(async () => {
       window.history.replaceState(null, "", "/#/research");
       window.dispatchEvent(new HashChangeEvent("hashchange"));
     });
-    expect(screen.getAllByRole("heading", { level: 1 })[0].textContent).toContain(
-      "Saved somewhere.",
-    );
+    expect(
+      screen.getAllByRole("heading", { level: 1 })[0].textContent,
+    ).toContain("Saved somewhere.");
   });
 });

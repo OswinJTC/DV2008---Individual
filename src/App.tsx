@@ -89,7 +89,7 @@ export default function App() {
     };
   }, []);
   useEffect(() => {
-    document.title = `${page.label} — Warranty, understood · Oswin Chen`;
+    document.title = `${page.label} — Warranty, understood · Chen Jui-Tai`;
     if (!initial.current) {
       window.scrollTo({ top: 0, behavior: "instant" });
       main.current?.focus({ preventScroll: true });
@@ -102,8 +102,13 @@ export default function App() {
         Skip to content
       </a>
       <header className="site-header">
-        <a className="wordmark" href="#/overview" aria-label="Oswin — overview">
-          oswin<span>✳</span>
+        <a
+          className="wordmark"
+          href="#/overview"
+          aria-label="DV2008 Interface Design — overview"
+        >
+          <span className="wordmark-course">DV2008</span>
+          <span className="wordmark-subtitle">INTERFACE DESIGN</span>
         </a>
         <button
           id="menu-toggle"
@@ -156,9 +161,10 @@ export default function App() {
         <div className="wrap site-footer-inner">
           <div>
             <a className="wordmark" href="#/overview">
-              oswin<span>✳</span>
+              <span className="wordmark-course">DV2008</span>
+              <span className="wordmark-subtitle">INTERFACE DESIGN</span>
             </a>
-            <p>Chen Jui Tai · Product / UX Designer</p>
+            <p>Chen Jui-Tai · Product / UX Designer</p>
           </div>
           <div className="footer-details">
             <span>Matriculation · U2221528F</span>

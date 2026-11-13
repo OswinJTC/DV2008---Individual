@@ -48,7 +48,7 @@ export function OverviewPage() {
           />
           <Phone
             name="assistant-original"
-            alt="Oswin’s original Warranty Assistant conversation prototype"
+            alt="Chen Jui-Tai’s original Warranty Assistant conversation prototype"
             className="hero-assistant"
             eager
           />
@@ -121,7 +121,7 @@ export function OverviewPage() {
       <div className="project-meta wrap">
         <div>
           <span>DESIGNER</span>
-          <p>Oswin / Chen Jui Tai</p>
+          <p>Chen Jui-Tai</p>
         </div>
         <div>
           <span>ROLE</span>
@@ -167,7 +167,7 @@ export function OverviewPage() {
               text: "The feedback that shaped clearer entry points.",
             },
           ].map((c) => (
-            <a href={`#/${c.href}`} key={c.href}>
+            <a href={`#/${c.href}`} key={`${c.n}-${c.href}`}>
               <span>{c.n}</span>
               <h2>{c.title}</h2>
               <p>{c.text}</p>
@@ -348,7 +348,9 @@ export function ContributionPage() {
               </span>
             </h1>
             <div>
-              <span className="personal-tag">OSWIN / ENGINEER + DESIGNER</span>
+              <span className="personal-tag">
+                CHEN JUI-TAI / ENGINEER + DESIGNER
+              </span>
               <p className="large-copy">
                 A chatbot is not just a chat box. It is a decision layer between{" "}
                 <span>complex systems and a person.</span>
@@ -638,12 +640,12 @@ export function ReflectionPage() {
             </summary>
             <div>
               <p>
-                <strong>Individual case study:</strong> Oswin / Chen Jui Tai.
-                Personal contribution is described in the author’s brief.
+                <strong>Individual case study:</strong> Chen Jui-Tai. Personal
+                contribution is described in the author’s brief.
               </p>
               <p>
                 <strong>Team ZZZ WIN:</strong> Choong Zixuan, Zhu Di (Jesse),
-                Seaw Zhi Yi, Chen Jui Tai (Oswin).
+                Seaw Zhi Yi, Chen Jui-Tai.
               </p>
               <p>
                 <strong>Assignment 1 — Information Gathering:</strong> pp. 17–19

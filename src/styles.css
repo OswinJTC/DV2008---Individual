@@ -192,16 +192,22 @@ header {
   background: #f7f4ec;
 }
 .wordmark {
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -2px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  font-weight: 700;
+  line-height: 1;
 }
-.wordmark span {
-  font-size: 13px;
-  vertical-align: top;
-  display: inline-block;
-  letter-spacing: 0;
-  margin: 9px 0 0 3px;
+.wordmark .wordmark-course {
+  font-size: 22px;
+  letter-spacing: 0.03em;
+}
+.wordmark .wordmark-subtitle {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
 }
 nav {
   display: flex;
@@ -1884,7 +1890,6 @@ p {
 }
 .site-header .wordmark {
   flex-shrink: 0;
-  font-size: 30px;
 }
 .site-header nav {
   display: flex;
