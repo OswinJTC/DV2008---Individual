@@ -204,7 +204,7 @@ export default function App() {
             </div>
           </nav>
           <div className="footer-details">
-            <span>Matri Number: U2221528F</span>
+            <span>Matric Number: U2221528F</span>
             <a href="mailto:ch0005ai@e.ntu.edu.sg">Email: ch0005ai@e.ntu.edu.sg</a>
           </div>
         </div>

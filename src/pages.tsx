@@ -281,7 +281,6 @@ export function DirectionsPage() {
             name="warranty-pass"
             alt="Original Sony headphone warranty pass with purchase, expiry and coverage information"
           />
-          <span>ONE PASS. THE DETAILS THAT MATTER.</span>
         </div>
         <details className="flow-details">
           <summary>
