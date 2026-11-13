@@ -63,7 +63,7 @@ export function OverviewPage() {
         <div className="about-portrait">
           <div className="portrait-frame">
             <img
-              src={img("oswin-profile")}
+              src="/images/oswin-profile.jpg"
               alt="Chen Jui-Tai in front of the Hollywood sign"
             />
           </div>
