@@ -1104,6 +1104,14 @@ summary::-webkit-details-marker {
   border-top: 1px solid #d3caba;
   padding-top: 25px;
 }
+.journey-chapter {
+  margin-top: 54px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+.journey-chapter > .eyebrow {
+  margin-bottom: 24px;
+}
 .journey-tabs {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

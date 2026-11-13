@@ -437,7 +437,7 @@ export function TestingPage() {
     <>
       <section id="testing" className="testing section">
         <div className="wrap">
-          <Label>08 / WHAT TESTING CHANGED</Label>
+          <Label>07 / WHAT TESTING CHANGED</Label>
           <div className="section-heading">
             <h1>
               It worked. <em>But could people find it?</em>
@@ -542,7 +542,7 @@ export function ExperiencePage() {
   return (
     <>
       <section className="section wrap" id="experience">
-        <Label>09 / THE FINAL EXPERIENCE</Label>
+        <Label>08 / THE FINAL EXPERIENCE</Label>
         <div className="section-heading">
           <h1>
             One connected journey. <em>Help when it’s needed.</em>
@@ -553,7 +553,8 @@ export function ExperiencePage() {
             interface stays available.
           </p>
         </div>
-        <div id="journey">
+        <div id="journey" className="journey-chapter">
+          <Label>09 / THE CONNECTED JOURNEY</Label>
           <Journey />
         </div>
       </section>
