@@ -4154,3 +4154,88 @@ footer > a {
     min-height: 0;
   }
 }
+
+/* Final responsive pass: keep the narrative readable on narrow screens. */
+@media (max-width: 760px) {
+  .section-heading,
+  .testing .section-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .section-heading > p,
+  .testing .section-heading > .testing-summary {
+    max-width: 48ch;
+    padding: 0;
+    border-left: 0;
+    font-size: 16px;
+  }
+  .testing .section-heading > .testing-summary {
+    padding-left: 16px;
+    border-left: 2px solid #b39b78;
+  }
+  .page-contribution .assistant-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .page-contribution .demo-stage {
+    position: static;
+    padding-top: 0;
+  }
+  .prototype-phone {
+    width: min(290px, 78vw);
+  }
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: 0;
+    padding-block: 30px;
+  }
+  .footer-brand,
+  .footer-details {
+    align-self: start;
+  }
+  .footer-index {
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #cfc5b5;
+    border-bottom: 1px solid #cfc5b5;
+    padding: 22px 0;
+  }
+  .footer-index > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+  }
+}
+@media (max-width: 520px) {
+  .site-header {
+    padding-inline: 18px;
+  }
+  .page-context {
+    padding-inline: 18px;
+  }
+  .page-contribution .contribution-cover {
+    padding-inline: 18px;
+  }
+  .page-contribution .contribution-cover .ownership {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .testing .team-iterations {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .testing .team-iterations > div {
+    padding: 20px;
+  }
+  .testing .team-iterations img {
+    height: auto;
+    max-height: 250px;
+  }
+  .footer-index > div {
+    gap: 12px 10px;
+  }
+  .footer-index a {
+    font-size: 11px;
+  }
+}
