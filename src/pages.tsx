@@ -118,63 +118,35 @@ export function OverviewPage() {
           </div>
         </div>
       </section>
-      <div className="project-meta wrap">
-        <div>
-          <span>DESIGNER</span>
-          <p>Chen Jui-Tai</p>
+      <section className="case-map wrap" aria-labelledby="case-map-title">
+        <div className="case-map-heading">
+          <Label>CASE STUDY PATH</Label>
+          <h2 id="case-map-title">Ten decisions. One connected experience.</h2>
+          <p>Select any step to jump directly to that part of the project.</p>
         </div>
-        <div>
-          <span>ROLE</span>
-          <p>Product / UX Designer</p>
-        </div>
-        <div className="meta-focus">
-          <span>MY FOCUS</span>
-          <p>
-            AI Warranty Assistant
-            <br />
-            <small>Interaction design, research & ideation</small>
-          </p>
-        </div>
-        <div>
-          <span>CONTEXT</span>
-          <p>
-            Team project · 2026
-            <br />
-            <small>Academic concept</small>
-          </p>
-        </div>
-      </div>
-      <section className="overview-index wrap">
-        <Label>EXPLORE THE CASE STUDY</Label>
-        <div className="chapter-grid">
+        <ol className="case-map-grid">
           {[
-            {
-              href: "research",
-              n: "01",
-              title: "Start with the problem",
-              text: "What 43 survey responses and 6 interviews revealed.",
-            },
-            {
-              href: "contribution",
-              n: "03",
-              title: "Explore my contribution",
-              text: "How I designed the AI Warranty Assistant experience.",
-            },
-            {
-              href: "contribution",
-              n: "04",
-              title: "See what testing changed",
-              text: "The feedback that shaped clearer entry points.",
-            },
-          ].map((c) => (
-            <a href={`#/${c.href}`} key={`${c.n}-${c.href}`}>
-              <span>{c.n}</span>
-              <h2>{c.title}</h2>
-              <p>{c.text}</p>
-              <ArrowUpRight size={22} />
-            </a>
+            ["01", "Research insight", "Research", "research/research"],
+            ["02", "Design challenge", "Frame", "research/challenge"],
+            ["03", "Four directions", "Explore", "research/directions"],
+            ["04", "Wallet concept", "Choose", "research/wallet"],
+            ["05", "My role", "Contribute", "contribution/contribution"],
+            ["06", "AI assistant", "Design", "contribution/assistant"],
+            ["07", "User testing", "Test", "contribution/testing"],
+            ["08", "Final experience", "Resolve", "final/experience"],
+            ["09", "Connected journey", "Deliver", "final/journey"],
+            ["10", "Reflection", "Learn", "final/learning"],
+          ].map(([n, title, phase, href]) => (
+            <li key={n}>
+              <a href={`#/${href}`}>
+                <span className="case-map-number">{n}</span>
+                <span className="case-map-phase">{phase}</span>
+                <strong>{title}</strong>
+                <ArrowUpRight size={16} />
+              </a>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
     </>
   );
@@ -246,7 +218,7 @@ export function ResearchPage() {
           </blockquote>
         </Reveal>
       </section>
-      <section className="challenge">
+      <section className="challenge" id="challenge">
         <div className="wrap">
           <Label>02 / THE DESIGN CHALLENGE</Label>
           <h2>
@@ -282,7 +254,7 @@ export function DirectionsPage() {
           <Concepts />
         </Reveal>
       </section>
-      <section className="wallet-section wrap">
+      <section className="wallet-section wrap" id="wallet">
         <div className="wallet-editorial">
           <Label>04 / OUR TEAM’S DIRECTION</Label>
           <h2>
@@ -411,7 +383,9 @@ export function ContributionPage() {
               </p>
             </div>
           </div>
-          <AssistantDemo />
+          <div id="assistant">
+            <AssistantDemo />
+          </div>
           <button
             className="original-toggle"
             aria-expanded={showOriginal}
@@ -566,7 +540,9 @@ export function ExperiencePage() {
             interface stays available.
           </p>
         </div>
-        <Journey />
+        <div id="journey">
+          <Journey />
+        </div>
       </section>
     </>
   );

@@ -53,8 +53,11 @@ const pages = [
   },
 ];
 function currentPage() {
-  const id = window.location.hash.replace(/^#\//, "");
+  const id = window.location.hash.replace(/^#\//, "").split("/")[0];
   return pages.some((p) => p.id === id) ? id : "overview";
+}
+function currentSection() {
+  return window.location.hash.replace(/^#\//, "").split("/")[1] ?? "";
 }
 export default function App() {
   const [pageId, setPageId] = useState(currentPage);
@@ -69,6 +72,12 @@ export default function App() {
       if (window.location.hash === "#main") return;
       setPageId(currentPage());
       setMenuOpen(false);
+      window.setTimeout(() => {
+        const section = currentSection();
+        if (section) {
+          document.getElementById(section)?.scrollIntoView({ block: "start" });
+        }
+      }, 0);
     };
     const onEscape = (event: KeyboardEvent) => {
       if (
@@ -90,7 +99,13 @@ export default function App() {
   }, []);
   useEffect(() => {
     document.title = `${page.label} — Warranty, understood · Chen Jui-Tai`;
-    if (!initial.current) {
+    const section = currentSection();
+    if (section) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(section)?.scrollIntoView({ block: "start" });
+        main.current?.focus({ preventScroll: true });
+      });
+    } else if (!initial.current) {
       window.scrollTo({ top: 0, behavior: "instant" });
       main.current?.focus({ preventScroll: true });
     }
