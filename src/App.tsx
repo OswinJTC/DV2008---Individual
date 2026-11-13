@@ -20,39 +20,36 @@ const pages = [
   },
   {
     id: "research",
-    label: "Research",
-    title: "The problem & insights",
-    component: ResearchPage,
-  },
-  {
-    id: "directions",
-    label: "Directions",
-    title: "Exploring the alternatives",
-    component: DirectionsPage,
+    label: "Research & direction",
+    title: "The problem and the path forward",
+    component: () => (
+      <>
+        <ResearchPage />
+        <DirectionsPage />
+      </>
+    ),
   },
   {
     id: "contribution",
-    label: "My contribution",
-    title: "The AI Warranty Assistant",
-    component: ContributionPage,
+    label: "My work & testing",
+    title: "The Assistant and what changed",
+    component: () => (
+      <>
+        <ContributionPage />
+        <TestingPage />
+      </>
+    ),
   },
   {
-    id: "testing",
-    label: "Testing",
-    title: "Feedback & iteration",
-    component: TestingPage,
-  },
-  {
-    id: "experience",
-    label: "Final experience",
-    title: "The connected journey",
-    component: ExperiencePage,
-  },
-  {
-    id: "reflection",
-    label: "Reflection",
-    title: "What I learned",
-    component: ReflectionPage,
+    id: "final",
+    label: "Final & reflection",
+    title: "The connected experience",
+    component: () => (
+      <>
+        <ExperiencePage />
+        <ReflectionPage />
+      </>
+    ),
   },
 ];
 function currentPage() {
@@ -147,7 +144,7 @@ export default function App() {
             <span>/</span>
             <span>{page.label}</span>
             <span className="chapter-count">
-              Chapter {String(index).padStart(2, "0")} / 06
+              Chapter {String(index).padStart(2, "0")} / 03
             </span>
           </div>
         )}
@@ -190,7 +187,7 @@ export default function App() {
           <p>Chen Jui Tai · Product / UX Designer</p>
         </div>
         <span>DV2008 · INDIVIDUAL CASE STUDY · 2026</span>
-        <a href="#/reflection">
+        <a href="#/final">
           Credits & reflection <ArrowUpRight size={18} />
         </a>
       </footer>

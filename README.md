@@ -17,7 +17,7 @@ React + TypeScript + Vite, Tailwind CSS v4, Framer Motion, Lucide icons. Static 
 
 ## Editing
 
-- `src/App.tsx`: seven chapter routes, persistent header, mobile menu and previous/next chapter navigation.
+- `src/App.tsx`: four compact chapter routes, persistent header, mobile menu and previous/next chapter navigation.
 - `src/pages.tsx`: chapter content, individual contribution and evidence.
 - `src/components/CaseStudy.tsx`: shared visuals, concept explorer, scripted assistant and final journey.
 - `src/styles.css`: design system, desktop/tablet/mobile styles and reduced-motion support.
@@ -33,12 +33,11 @@ All project assets are extracted from the three supplied DV2008 PDFs. Embedded s
 
 ## Verification
 
-TypeScript and production build; DOM interaction tests for concept selection, three complete assistant scenarios with reset, original-screen disclosure, six journey stages, anchors and image accessibility. The chapter revision passes 14 tests, including direct chapter URLs, one h1 per page, active navigation, focus transfer, mobile menu/Escape and history navigation. Browser screenshot QA was unavailable: browser host connection failed and native Chrome control timed out; responsive rendering still requires visual review.
-
+TypeScript and production build; DOM interaction tests for concept selection, three complete assistant scenarios with reset, original-screen disclosure, six journey stages, anchors and image accessibility. The compact chapter revision also checks direct URLs, active navigation, focus transfer, mobile menu/Escape and history navigation. Browser screenshot QA was unavailable: browser host connection failed and native Chrome control timed out; responsive rendering still requires visual review.
 
 ## Chapter URLs and Cloudflare
 
-The public deployment is https://dv2008---individual.oswin9089.workers.dev . Chapters use `/#/overview`, `/#/research`, `/#/directions`, `/#/contribution`, `/#/testing`, `/#/experience`, and `/#/reflection`. Hash routing supports direct links and refreshes on the existing static hosting setup without server rewrites. Only the selected chapter is rendered.
+The public deployment is https://dv2008---individual.oswin9089.workers.dev . Chapters use `/#/overview`, `/#/research`, `/#/contribution`, and `/#/final`. Hash routing supports direct links and refreshes on the existing static hosting setup without server rewrites. Only the selected chapter is rendered.
 
 Cloudflare builds the GitHub `main` branch with `npm run build` and deploys `dist`. The production workers.dev route must remain enabled. The original Sites manifest is retained for that separate hosting target; Cloudflare uses its dashboard build configuration.
 
