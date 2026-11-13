@@ -4064,7 +4064,7 @@ footer > a {
 }
 .page-contribution .contribution-cover .eyebrow {
   position: relative;
-  color: #d7c9b6;
+  color: #f0e7d8;
 }
 .page-contribution .contribution-cover .contribution-intro {
   position: relative;
@@ -4086,7 +4086,7 @@ footer > a {
 .page-contribution .contribution-cover .personal-tag {
   margin-bottom: 30px;
   border-color: rgba(255, 255, 255, 0.28);
-  color: #d8c6aa;
+  color: #f0e3cc;
   background: rgba(255, 255, 255, 0.04);
 }
 .page-contribution .contribution-cover .large-copy {
@@ -4100,7 +4100,7 @@ footer > a {
 }
 .page-contribution .contribution-cover p,
 .page-contribution .contribution-cover .ownership span {
-  color: #c9c0b3;
+  color: #eee5d9;
 }
 .page-contribution .contribution-cover .ownership {
   grid-template-columns: 1fr 1fr;
@@ -4129,14 +4129,14 @@ footer > a {
   background: #85796b;
 }
 .page-contribution .contribution-cover .engineering-proof span {
-  color: #d6bd96;
+  color: #f0d7a8;
 }
 .page-contribution .contribution-cover .engineering-proof strong {
   color: #fffaf0;
   font-size: clamp(17px, 1.8vw, 22px);
 }
 .page-contribution .contribution-cover .engineering-proof p {
-  color: #c9c0b3;
+  color: #eee5d9;
 }
 @media (max-width: 760px) {
   .page-contribution .contribution-cover .contribution-intro {
