@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MotionConfig } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import {
   OverviewPage,
   ResearchPage,
@@ -51,6 +51,18 @@ const pages = [
       </>
     ),
   },
+];
+const footerSteps = [
+  ["01", "Research", "research/research"],
+  ["02", "Challenge", "research/challenge"],
+  ["03", "Directions", "research/directions"],
+  ["04", "Wallet", "research/wallet"],
+  ["05", "My role", "contribution/contribution"],
+  ["06", "Assistant", "contribution/assistant"],
+  ["07", "Testing", "contribution/testing"],
+  ["08", "Experience", "final/experience"],
+  ["09", "Journey", "final/journey"],
+  ["10", "Reflection", "final/learning"],
 ];
 function currentPage() {
   const id = window.location.hash.replace(/^#\//, "").split("/")[0];
@@ -174,20 +186,28 @@ export default function App() {
       </main>
       <footer className="site-footer">
         <div className="wrap site-footer-inner">
-          <div>
+          <div className="footer-brand">
             <a className="wordmark" href="#/overview">
               <span className="wordmark-course">DV2008</span>
               <span className="wordmark-subtitle">INTERFACE DESIGN</span>
             </a>
             <p>Chen Jui-Tai · Product / UX Designer</p>
           </div>
+          <nav className="footer-index" aria-label="Case study chapters">
+            <span className="footer-index-label">CASE STUDY / 01—10</span>
+            <div>
+              {footerSteps.map(([number, label, href]) => (
+                <a key={number} href={`#/${href}`}>
+                  <span>{number}</span>
+                  {label}
+                </a>
+              ))}
+            </div>
+          </nav>
           <div className="footer-details">
             <span>Matriculation · U2221528F</span>
             <a href="mailto:ch0005ai@e.ntu.edu.sg">ch0005ai@e.ntu.edu.sg</a>
           </div>
-          <a href="#/final">
-            Credits & reflection <ArrowUpRight size={18} />
-          </a>
         </div>
       </footer>
     </MotionConfig>
