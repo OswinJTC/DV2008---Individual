@@ -149,7 +149,9 @@ describe("Chapter navigation", () => {
       screen.getByRole("link", { name: "My work & testing", exact: true }),
     );
     expect(menu.getAttribute("aria-expanded")).toBe("false");
-    expect(screen.getByText("It worked.", { exact: false })).toBeTruthy();
+    expect(
+      screen.getByText("The core flow worked.", { exact: false }),
+    ).toBeTruthy();
   });
   it("restores chapters on browser hash navigation", async () => {
     openPage("research");

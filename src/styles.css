@@ -1123,6 +1123,39 @@ summary::-webkit-details-marker {
   border-top: 1px solid #d3caba;
   padding-top: 25px;
 }
+.testing .section-heading {
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+.testing .section-heading h1 {
+  max-width: 17ch;
+}
+.testing .team-iterations {
+  gap: 42px;
+  margin-top: 0;
+}
+.testing .team-iterations > div {
+  border: 1px solid var(--line);
+  background: #f8f5ed;
+  padding: 28px;
+}
+.testing .team-iterations h3 {
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.12;
+  margin: 13px 0 12px;
+}
+.testing .team-iterations p {
+  min-height: 50px;
+  max-width: 38ch;
+}
+.testing .team-iterations img {
+  width: 100%;
+  height: 240px;
+  margin-top: 25px;
+  object-fit: cover;
+  border-radius: 3px;
+}
 .journey-chapter {
   margin-top: 54px;
   padding-top: 34px;

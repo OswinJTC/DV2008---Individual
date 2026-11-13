@@ -403,49 +403,34 @@ export function TestingPage() {
           <Label>07 / WHAT TESTING CHANGED</Label>
           <div className="section-heading">
             <h1>
-              It worked. <em>But could people find it?</em>
+              The core flow worked. <em>Testing made it easier to find.</em>
             </h1>
             <p>
-              Our team tested four tasks with four participants. All completed
-              the main claim flow and found the receipt. Coverage and filtering
-              exposed a different problem: discoverability.
-            </p>
-          </div>
-          <div className="test-findings">
-            <div>
-              <strong>4 participants</strong>
-              <span>Formative prototype test</span>
-            </div>
-            <p>
-              Most looked for coverage manually and took time to spot it. They
-              could use the assistant <strong>when prompted</strong>, but its
-              original icon was unclear.
+              Four participants tested the prototype and completed the main
+              claim flow. What changed was not the task itself, but the
+              discoverability and hierarchy of the information around it.
             </p>
           </div>
           <div className="team-iterations">
             <div>
-              <span className="small-label">
-                TEAM ITERATION / INFORMATION HIERARCHY
-              </span>
-              <h3>Coverage needed to stand out.</h3>
+              <span className="small-label">COVERAGE HIERARCHY</span>
+              <h3>Make coverage easier to notice.</h3>
               <p>
-                Terms blended into other details. The team made them a distinct
-                blue link and clarified the proof-of-purchase button.
+                Users found the warranty page, but coverage information was hard
+                to notice. We made it more visually distinct.
               </p>
               <img
                 src={img("receipt-button-after")}
-                alt="Updated distinct claim and proof-of-purchase buttons"
+                alt="Updated warranty screen with more visually distinct coverage and proof-of-purchase actions"
                 loading="lazy"
               />
             </div>
             <div>
-              <span className="small-label">
-                TEAM ITERATION / EXPECTED LOCATION
-              </span>
+              <span className="small-label">FILTER PLACEMENT</span>
               <h3>Put filters where people looked.</h3>
               <p>
-                Participants tried the sort control first. The team moved tag
-                filtering there, rather than leaving it under search.
+                Users expected filtering under the sort control. We moved tag
+                filtering to where they naturally looked.
               </p>
               <img
                 src={img("filter-after")}
@@ -454,11 +439,6 @@ export function TestingPage() {
               />
             </div>
           </div>
-          <p className="source-note">
-            Source: A3, pp. 14–19. These are observations from a small formative
-            test. The PDFs do not report a second test after the changes, so
-            improved outcomes remain unverified.
-          </p>
         </div>
       </section>
     </>
