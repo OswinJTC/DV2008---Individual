@@ -32,7 +32,6 @@ export function OverviewPage() {
         </div>
         <div className="hero-art">
           <div className="hero-orbit" />
-          <span className="art-kicker">WARRANTY, UNDERSTOOD.</span>
           <Phone
             name="wallet-overview"
             alt="Original team prototype showing saved warranty cards"
@@ -53,9 +52,6 @@ export function OverviewPage() {
               <strong>to useful answers.</strong>
             </span>
           </div>
-          <span className="art-caption">
-            APPLE WALLET CONCEPT + AI ASSISTANCE
-          </span>
         </div>
       </section>
       <section className="about-me wrap" aria-labelledby="about-title">
@@ -114,7 +110,7 @@ export function OverviewPage() {
       <section className="case-map wrap" aria-labelledby="case-map-title">
         <div className="case-map-heading">
           <Label>CASE STUDY PATH</Label>
-          <h2 id="case-map-title">Ten decisions. One connected experience.</h2>
+          <h2 id="case-map-title">Ten steps. One connected experience.</h2>
           <p>Select any step to jump directly to that part of the project.</p>
         </div>
         <ol className="case-map-grid">
@@ -215,7 +211,7 @@ export function ResearchPage() {
         <div className="wrap">
           <Label>02 / THE DESIGN CHALLENGE</Label>
           <h2>
-            How might we make warranties{" "}
+            How to make warranties{" "}
             <em>easy to retrieve, understand and act on</em>—without building a
             new tracking habit?
           </h2>
@@ -333,9 +329,9 @@ export function ContributionPage() {
                   <span>complex systems and a person.</span>
                 </p>
                 <p>
-                  Before DV2008, I built chatbots and AI agents in three different
-                  settings: querying company data, supporting internal workflows,
-                  and running locally on a desktop.
+                  Before DV2008, I built chatbots and AI agents in all my
+                  internships including querying company data, supporting
+                  internal workflows, and running locally on a desktop.
                 </p>
                 <p>
                   That experience changed how I approached this project. I cared
@@ -425,42 +421,6 @@ export function TestingPage() {
               could use the assistant <strong>when prompted</strong>, but its
               original icon was unclear.
             </p>
-          </div>
-          <div className="iteration">
-            <div className="iteration-label">
-              <span className="small-label">MY ASSISTANT FOCUS</span>
-              <h3>A small icon. A clearer invitation.</h3>
-              <p>
-                The entry point needed to communicate conversation, not an
-                ambiguous AI symbol.
-              </p>
-            </div>
-            <div className="icon-comparison">
-              <div>
-                <span className="small-label">BEFORE</span>
-                <img
-                  src={img("assistant-icon-before")}
-                  alt="Original blue sparkle icon"
-                />
-                <p>AI symbolism</p>
-              </div>
-              <ArrowRight size={28} strokeWidth={1} />
-              <div>
-                <span className="small-label">AFTER</span>
-                <img
-                  src={img("assistant-icon-after")}
-                  alt="Revised black chat bubble with sparkle"
-                />
-                <p>Recognisable conversation</p>
-              </div>
-            </div>
-            <div className="feedback-strip">
-              <span>FEEDBACK</span>
-              <p>Chatbot icon wasn’t clear.</p>
-              <ArrowRight size={18} />
-              <span>RESPONSE</span>
-              <p>Redesigned as a cleaner chat bubble.</p>
-            </div>
           </div>
           <div className="team-iterations">
             <div>
@@ -588,9 +548,6 @@ export function ReflectionPage() {
               </li>
             </ol>
           </div>
-          <p className="source-note">
-            These are proposed next steps, not completed research.
-          </p>
           <details className="sources">
             <summary>
               Project credits & source notes <Plus size={18} />

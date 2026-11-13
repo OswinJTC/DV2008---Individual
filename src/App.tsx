@@ -191,10 +191,9 @@ export default function App() {
               <span className="wordmark-course">DV2008</span>
               <span className="wordmark-subtitle">INTERFACE DESIGN</span>
             </a>
-            <p>Chen Jui-Tai · Product / UX Designer</p>
+            <p>Chen Jui-Tai · Engineer / Designer</p>
           </div>
           <nav className="footer-index" aria-label="Case study chapters">
-            <span className="footer-index-label">CASE STUDY / 01—10</span>
             <div>
               {footerSteps.map(([number, label, href]) => (
                 <a key={number} href={`#/${href}`}>
@@ -205,8 +204,8 @@ export default function App() {
             </div>
           </nav>
           <div className="footer-details">
-            <span>Matriculation · U2221528F</span>
-            <a href="mailto:ch0005ai@e.ntu.edu.sg">ch0005ai@e.ntu.edu.sg</a>
+            <span>Matri Number: U2221528F</span>
+            <a href="mailto:ch0005ai@e.ntu.edu.sg">Email: ch0005ai@e.ntu.edu.sg</a>
           </div>
         </div>
       </footer>

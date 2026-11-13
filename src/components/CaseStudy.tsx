@@ -193,7 +193,6 @@ export function AssistantDemo() {
             </p>
           </div>
         </div>
-        <p className="demo-note">Original prototype · Assignment 3 / p. 9</p>
       </div>
       <div className="demo-stage">
         <figure className="prototype-phone">
