@@ -3669,7 +3669,7 @@ footer > a {
     padding: 22px 0;
   }
   .footer-index > div {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   .footer-details {
     order: 3;
@@ -4203,7 +4203,7 @@ footer > a {
     padding: 22px 0;
   }
   .footer-index > div {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 12px 18px;
   }
 }
