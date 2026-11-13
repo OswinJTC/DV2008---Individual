@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MotionConfig } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import {
   OverviewPage,
   ResearchPage,
@@ -151,33 +151,6 @@ export default function App() {
         <div key={pageId}>
           <Page />
         </div>
-        <nav className="page-pagination wrap" aria-label="Chapter navigation">
-          {index > 0 ? (
-            <a href={`#/${pages[index - 1].id}`}>
-              <span>
-                <ArrowLeft size={17} /> Previous
-              </span>
-              <strong>{pages[index - 1].label}</strong>
-            </a>
-          ) : (
-            <div />
-          )}
-          {index < pages.length - 1 ? (
-            <a className="next-page" href={`#/${pages[index + 1].id}`}>
-              <span>
-                Next chapter <ArrowRight size={17} />
-              </span>
-              <strong>{pages[index + 1].title}</strong>
-            </a>
-          ) : (
-            <a className="next-page" href="#/overview">
-              <span>
-                Back to the project <ArrowUpRight size={17} />
-              </span>
-              <strong>Overview</strong>
-            </a>
-          )}
-        </nav>
       </main>
       <footer className="site-footer">
         <div className="wrap site-footer-inner">
