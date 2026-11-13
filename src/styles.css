@@ -3854,3 +3854,140 @@ footer > a {
     min-height: 78px;
   }
 }
+
+/* Chapter 05: an editorial cover for the individual contribution. */
+.page-contribution .contribution-cover {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 52px) clamp(22px, 4vw, 54px) 0;
+  background: #2d2823;
+  color: #f7f2e8;
+}
+.contribution-watermark {
+  position: absolute;
+  top: -48px;
+  right: 18px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(150px, 20vw, 250px);
+  line-height: 1;
+  opacity: 0.045;
+  pointer-events: none;
+}
+.page-contribution .contribution-cover .eyebrow {
+  position: relative;
+  color: #d7c9b6;
+}
+.page-contribution .contribution-cover .contribution-intro {
+  position: relative;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(38px, 7vw, 90px);
+  padding: 28px 0 42px;
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+.page-contribution .contribution-cover .contribution-intro h1 {
+  max-width: 12ch;
+  color: #fffaf0;
+  font-size: clamp(50px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+.page-contribution .contribution-cover .contribution-intro h1 em {
+  color: #cbb38e;
+}
+.page-contribution .contribution-cover .personal-tag {
+  margin-bottom: 30px;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #d8c6aa;
+  background: rgba(255, 255, 255, 0.04);
+}
+.page-contribution .contribution-cover .large-copy {
+  max-width: 23ch;
+  color: #f8f2e8;
+  font-size: clamp(24px, 2.7vw, 35px);
+  line-height: 1.2;
+}
+.page-contribution .contribution-cover .large-copy > span {
+  color: #cbb38e;
+}
+.page-contribution .contribution-cover p,
+.page-contribution .contribution-cover .ownership span {
+  color: #c9c0b3;
+}
+.page-contribution .contribution-cover .ownership {
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+.page-contribution .contribution-cover .ownership strong {
+  color: #fffaf0;
+}
+.page-contribution .contribution-cover .engineering-proof {
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 calc(clamp(22px, 4vw, 54px) * -1);
+  border: 0;
+  background: rgba(255, 255, 255, 0.14);
+}
+.page-contribution .contribution-cover .engineering-proof > div {
+  min-height: 180px;
+  padding: 24px clamp(20px, 3vw, 34px);
+  background: #38312b;
+}
+.page-contribution .contribution-cover .engineering-proof > div:nth-child(2) {
+  background: #41382f;
+}
+.page-contribution .contribution-cover .engineering-proof > div:nth-child(3) {
+  background: #4a3f34;
+}
+.page-contribution .contribution-cover .engineering-proof span {
+  color: #d6bd96;
+}
+.page-contribution .contribution-cover .engineering-proof strong {
+  color: #fffaf0;
+  font-size: clamp(17px, 1.8vw, 22px);
+}
+.page-contribution .contribution-cover .engineering-proof p {
+  color: #c9c0b3;
+}
+.assistant-section-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 38px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.assistant-section-label span {
+  padding: 7px 9px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.assistant-section-label p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .page-contribution .contribution-cover .contribution-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .page-contribution .contribution-cover .contribution-intro h1 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+  .page-contribution .contribution-cover .ownership,
+  .page-contribution .contribution-cover .engineering-proof {
+    grid-template-columns: 1fr;
+  }
+  .page-contribution .contribution-cover .engineering-proof > div {
+    min-height: 0;
+  }
+  .assistant-section-label {
+    align-items: flex-start;
+  }
+}

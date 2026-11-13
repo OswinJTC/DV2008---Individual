@@ -314,77 +314,87 @@ export function ContributionPage() {
     <>
       <section id="contribution" className="contribution">
         <div className="wrap">
-          <Label light>05 / MY CONTRIBUTION</Label>
-          <div className="contribution-intro">
-            <h1>
-              I design chatbots that <em>make systems usable.</em>
-              <span className="legacy-test-copy">
-                My focus: turning warranty information
-              </span>
-            </h1>
-            <div>
-              <span className="personal-tag">
-                CHEN JUI-TAI / ENGINEER + DESIGNER
-              </span>
-              <p className="large-copy">
-                A chatbot is not just a chat box. It is a decision layer between{" "}
-                <span>complex systems and a person.</span>
-              </p>
-              <p>
-                Before DV2008, I built chatbots and AI agents in three different
-                settings: querying company data, supporting internal workflows,
-                and running locally on a desktop.
-              </p>
-              <p>
-                That experience changed how I approached this project. I cared
-                about intent, tool calls, retrieval, permissions and the exact
-                moment an answer becomes useful - not just how the interface
-                looks.
-              </p>
-              <div className="ownership">
-                <div>
-                  <strong>My contribution</strong>
-                  <span>
-                    Assistant experience; research/interviews; early app and
-                    Wallet ideation.
-                  </span>
-                </div>
-                <div>
-                  <strong>Our team</strong>
-                  <span>
-                    Shared research findings, product direction, Wallet system
-                    and collaborative testing.
-                  </span>
+          <div className="contribution-cover">
+            <span className="contribution-watermark" aria-hidden="true">
+              05
+            </span>
+            <Label light>05 / MY CONTRIBUTION</Label>
+            <div className="contribution-intro">
+              <h1>
+                I design chatbots that <em>make systems usable.</em>
+                <span className="legacy-test-copy">
+                  My focus: turning warranty information
+                </span>
+              </h1>
+              <div>
+                <span className="personal-tag">
+                  CHEN JUI-TAI / ENGINEER + DESIGNER
+                </span>
+                <p className="large-copy">
+                  A chatbot is a decision layer between{" "}
+                  <span>complex systems and a person.</span>
+                </p>
+                <p>
+                  Before DV2008, I built chatbots and AI agents in three different
+                  settings: querying company data, supporting internal workflows,
+                  and running locally on a desktop.
+                </p>
+                <p>
+                  That experience changed how I approached this project. I cared
+                  about intent, tool calls, retrieval, permissions and the exact
+                  moment an answer becomes useful - not just how the interface
+                  looks.
+                </p>
+                <div className="ownership">
+                  <div>
+                    <strong>My contribution</strong>
+                    <span>
+                      Assistant experience; research/interviews; early app and
+                      Wallet ideation.
+                    </span>
+                  </div>
+                  <div>
+                    <strong>Our team</strong>
+                    <span>
+                      Shared research findings, product direction, Wallet system
+                      and collaborative testing.
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              className="engineering-proof"
+              aria-label="Chatbot engineering background"
+            >
+              <div>
+                <span>01 / JUBO HEALTH</span>
+                <strong>Natural-language data chatbot</strong>
+                <p>
+                  FastAPI, intent recognition, tool execution and secure OAuth.
+                </p>
+              </div>
+              <div>
+                <span>02 / BINANCE</span>
+                <strong>AI workflows used by 200+ employees</strong>
+                <p>
+                  RAG, image search and prompt infrastructure for internal
+                  teams.
+                </p>
+              </div>
+              <div>
+                <span>03 / GIGABYTE</span>
+                <strong>Local-first AI agent</strong>
+                <p>
+                  Diagnostics, semantic search and task automation under VRAM
+                  limits.
+                </p>
+              </div>
+            </div>
           </div>
-          <div
-            className="engineering-proof"
-            aria-label="Chatbot engineering background"
-          >
-            <div>
-              <span>01 / JUBO HEALTH</span>
-              <strong>Natural-language data chatbot</strong>
-              <p>
-                FastAPI, intent recognition, tool execution and secure OAuth.
-              </p>
-            </div>
-            <div>
-              <span>02 / BINANCE</span>
-              <strong>AI workflows used by 200+ employees</strong>
-              <p>
-                RAG, image search and prompt infrastructure for internal teams.
-              </p>
-            </div>
-            <div>
-              <span>03 / GIGABYTE</span>
-              <strong>Local-first AI agent</strong>
-              <p>
-                Diagnostics, semantic search and task automation under VRAM
-                limits.
-              </p>
-            </div>
+          <div className="assistant-section-label">
+            <span>05A</span>
+            <p>Engineering experience, translated into an interaction.</p>
           </div>
           <div id="assistant">
             <AssistantDemo />
