@@ -27,14 +27,8 @@ export function OverviewPage() {
             Helping young adults retrieve, understand and act on warranty
             information—without another system to maintain.
           </p>
-          <a href="#/contribution" className="primary-link">
-            Explore my contribution <ArrowUpRight size={18} />
-          </a>
-          <a className="scroll-note" href="#/research">
-            <span className="circle-arrow">
-              <ArrowDown size={17} />
-            </span>{" "}
-            THE THINKING BEHIND THE DESIGN
+          <a href="#case-map-title" className="primary-link">
+            View the 10-step case study <ArrowDown size={18} />
           </a>
         </div>
         <div className="hero-art">
