@@ -74,7 +74,7 @@ const concepts = [
     trade:
       "Downloading, setting up and maintaining another app adds work to a low-frequency task.",
     num: "01",
-    image: "wallet-overview",
+    image: "direction-phone.svg",
   },
   {
     name: "Shopee integration",
@@ -84,7 +84,7 @@ const concepts = [
     trade:
       "Purchases from other platforms and physical stores remain outside the system.",
     num: "02",
-    image: "early-flow-13",
+    image: "shopee-mark.svg",
   },
   {
     name: "Email / Gmail",
@@ -104,7 +104,7 @@ const concepts = [
     trade:
       "Depends on merchant support and excludes people who do not use Apple Wallet.",
     num: "04",
-    image: "warranty-pass",
+    image: "apple-wallet-mark.svg",
   },
 ];
 export function Concepts() {

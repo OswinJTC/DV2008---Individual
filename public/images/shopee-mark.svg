@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <rect width="300" height="260" fill="#fff"/>
+  <path d="M92 66h116l-8 112H100z" fill="#f45138"/>
+  <path d="M122 70c0-45 56-45 56 0" fill="none" stroke="#f45138" stroke-width="16"/>
+  <text x="150" y="144" text-anchor="middle" font-family="Arial" font-size="70" fill="#fff">S</text>
+  <text x="150" y="220" text-anchor="middle" font-family="Arial" font-size="31" fill="#f45138">Shopee</text>
+</svg>
